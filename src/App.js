@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
+    console.dir(this.props.routing);
     return (
       <div className="App">
         <div className="App-header">
@@ -17,4 +19,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    users: state.users
+  }
+}
+
+export default connect(mapStateToProps)(App);

@@ -10,12 +10,18 @@ import App from './App';
 import Menu from './Menu';
 import './index.css';
 
+import allReducers from './reducers';
+
+const store = createStore(allReducers);
+
 ReactDOM.render(
-<Router history={browserHistory}>
-	<Route path="/" component={MasterPage}>
-		<IndexRoute component={App}></IndexRoute>
-		<Route path="menu" component={Menu}></Route>
-	</Route>
-</Router>,
+	<Provider store={store}>
+		<Router history={browserHistory}>
+			<Route path="/" component={MasterPage}>
+				<IndexRoute component={App}></IndexRoute>
+				<Route path="menu" component={Menu}></Route>
+			</Route>
+		</Router>
+	</Provider>,
 document.getElementById('root')
 );
