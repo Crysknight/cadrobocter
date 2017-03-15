@@ -7,9 +7,9 @@ import * as actions from '../actions';
 
 //here be components
 
-import '../css/app.css';
+import '../css/auth.css';
 
-class App extends Component {
+class Auth extends Component {
   constructor(props) {
 	super(props);
 	
@@ -17,8 +17,16 @@ class App extends Component {
 
   render() {
 	return (
-	  <div id="__app">
-	    <Link to="/login">Login</Link>
+	  <div id="__auth">
+	    <div className="wrapper">
+	      <h2>Welcome</h2>
+	      <form className="auth-form">
+	      	<input type="text"/>
+	      	<input type="text"/>
+	      	<input type="password"/>
+	      	<input type="submit" value="Sign in" />
+	      </form>
+	    </div>
 	  </div>
 	);
   }
@@ -26,7 +34,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-
+	
   };
 }
 
@@ -36,4 +44,4 @@ function matchDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(App);
+export default connect(mapStateToProps, matchDispatchToProps)(Auth);

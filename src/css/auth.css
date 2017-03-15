@@ -1,0 +1,73 @@
+#__auth {
+	background-color: #c55;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: table;
+	text-align: center;
+}
+
+#__auth .wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#__auth h2 {
+	color: #fff;
+	font-size: 70px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: 
+		-2px -2px 0 #000,
+		-2px 0 0 #000,
+		-2px 2px 0 #000,
+		0px -2px 0 #000,
+		0px 2px 0 #000,
+		2px -2px 0 #000,
+		2px 0px 0 #000,
+		2px 2px 0 #000;
+}
+
+#__auth .auth-form {
+	display: block;
+	margin: 0 auto;
+	width: 40%;
+	background-color: #fff;
+	border-radius: 8px;
+	-webkit-box-shadow: 4px 4px 2px #333;
+	box-shadow: 4px 4px 2px #333;
+	border: 2px solid #000;
+}
+
+#__auth .auth-form input {
+	display: block;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 30px;
+	height: 50px;
+	border: 2px solid #000;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 2px 2px 20px #ccc;
+	box-shadow: inset 2px 2px 20px #ccc;
+}
+
+#__auth .auth-form input[type="submit"] {
+	margin-bottom: 30px;
+	-webkit-box-shadow: none;
+	width: 30%;
+	box-shadow: none;
+	background-color: #ccc;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 23px;
+	text-shadow: 
+		-2px -2px 0 #000,
+		-2px 0 0 #000,
+		-2px 2px 0 #000,
+		0px -2px 0 #000,
+		0px 2px 0 #000,
+		2px -2px 0 #000,
+		2px 0px 0 #000,
+		2px 2px 0 #000;
+}
