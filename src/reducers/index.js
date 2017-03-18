@@ -3,11 +3,13 @@ import { routerReducer } from 'react-router-redux';
 
 import user from './user';
 import levelOne from './level-one';
+import auth from './auth';
 
 const allReducers = combineReducers({
   routing: routerReducer,
   user,
-  levelOne
+  levelOne,
+  auth
 });
 
 export default allReducers;

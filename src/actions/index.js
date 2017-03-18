@@ -4,3 +4,15 @@ export function defAction(payload) {
   	payload
   };
 }
+
+export function authSignIn() {
+  return {
+  	type: 'SIGN_IN'
+  };
+}
+
+export function authSignUp() {
+  return {
+  	type: 'SIGN_UP'
+  };
+}
