@@ -8,7 +8,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 
-import App from './containers/App';
+import Layout from './containers/Layout';
 import Auth from './containers/Auth';
 
 import MasterPage from './components/MasterPage';
@@ -29,7 +29,7 @@ ReactDOM.render(
 <Provider store={store}>
   <Router history={history}>
     <Route path="/" component={MasterPage}>
-      <IndexRoute component={App} onEnter={requireAuth}/>
+      <IndexRoute component={Layout} onEnter={requireAuth}/>
       <Route path="/auth" component={Auth} />
     </Route>
   </Router>
