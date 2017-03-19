@@ -17,7 +17,7 @@ export const checkUser = user => dispatch => {
   setTimeout(() => {
     if (
       (user.login === 'crysknife' && user.password === 'hell0-it-s-me') || 
-      (user.login === 'name-s-Nick' && user.password === 'I-am-the-0wner')
+      (user.login === 'Nick' && user.password === 'hell')
     ) {
       console.log('welcome');
       dispatch({ type: 'CHECK_USER_SUCCESS', payload: { ...user, token: 'f3q9fj948399fj' } });
