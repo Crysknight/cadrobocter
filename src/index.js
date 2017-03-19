@@ -6,6 +6,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import cookie from 'react-cookie';
 
 
 import Layout from './containers/Layout';
@@ -25,10 +26,18 @@ function requireAuth(nextState, replace) {
   }
 }
 
+function init() {
+  let login = cookie.load('login');
+  let token = cookie.load('token');
+  if (login && token) {
+  	store.dispatch({ type: 'CHECK_USER_SUCCESS', payload: { login, token }});
+  }
+}
+
 ReactDOM.render(
 <Provider store={store}>
   <Router history={history}>
-    <Route path="/" component={MasterPage}>
+    <Route path="/" onEnter={init} component={MasterPage}>
       <IndexRoute component={Layout} onEnter={requireAuth}/>
       <Route path="/auth" component={Auth} />
     </Route>

@@ -10,15 +10,16 @@ import * as actions from '../actions';
 import '../css/app.css';
 
 class App extends Component {
-  constructor(props) {
-	super(props);
+ //  constructor(props) {
+	// super(props);
 	
-  }
+ //  }
 
   render() {
 	return (
 	  <div id="__app">
-	    <Link to="/login">Login</Link>
+	    <Link to="/auth">Login</Link>
+	    <button style={{display: 'block', marginTop: 30}} onClick={this.props.logOut}>Log out</button>
 	  </div>
 	);
   }
@@ -26,13 +27,13 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-
+  	user: state.user
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-	
+	logOut: actions.logOut
   }, dispatch);
 }
 

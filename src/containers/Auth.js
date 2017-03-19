@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import * as actions from '../actions';
 
 import Input from '../components/input';
@@ -13,6 +12,11 @@ class Auth extends Component {
   	super(props);
   	this.handleForm = this.handleForm.bind(this);
   }
+  // componentWillReceiveProps(nextProps) {
+  // 	if (this.props.user !== nextProps.user && !nextProps.user.error) {
+  // 	  browserHistory.push('/');
+  // 	}
+  // }
   handleForm(event) {
   	event.preventDefault();
     // for (let i = 0; i < event.target.length - 1; i++) {
@@ -62,7 +66,7 @@ class Auth extends Component {
 function mapStateToProps(state) {
   return {
 	auth: state.auth,
-  user: state.user
+    user: state.user
   };
 }
 
@@ -70,7 +74,7 @@ function matchDispatchToProps(dispatch) {
   return bindActionCreators({
 	authSignIn: actions.authSignIn,
 	authSignUp: actions.authSignUp,
-  checkUser: actions.checkUser
+    checkUser: actions.checkUser
   }, dispatch);
 }
 
