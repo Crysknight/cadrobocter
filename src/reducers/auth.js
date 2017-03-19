@@ -35,10 +35,10 @@ export default function(state = [
 		  inputType: 'text',
 		  inputPlaceholder: 'Your login (must be unique)'	
 		}, {
-		  key: 'sign_up_name',
-		  describer: 'sign_up_name',
-		  inputType: 'text',
-		  inputPlaceholder: 'Your name'
+		  key: 'sign_up_email',
+		  describer: 'sign_up_email',
+		  inputType: 'email',
+		  inputPlaceholder: 'Your E-mail'
 		}, {
 		  key: 'sign_up_password',
 		  describer: 'sign_up_password',
@@ -51,4 +51,4 @@ export default function(state = [
   	  return state;
   	}
   }
-}
+};

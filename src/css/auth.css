@@ -47,6 +47,11 @@
 	margin: 0 5px 20px 5px;
 	border-radius: 3px;
 	font-weight: bold;
+	padding: 1px 6px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	vertical-align: top;
 }
 
 #__auth .change-auth:focus {
@@ -58,6 +63,7 @@
 	background-color: #999;
 	-webkit-box-shadow: inset 5px 5px 3px #666;
 	box-shadow: inset 5px 5px 3px #666;
+	padding: 5px 6px 1px 10px;
 }
 
 #__auth .auth-form {

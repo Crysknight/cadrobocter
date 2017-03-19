@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 
 import * as actions from '../actions';
 
@@ -16,7 +15,15 @@ class Auth extends Component {
   }
   handleForm(event) {
   	event.preventDefault();
-  	console.dir(event.target);
+    // for (let i = 0; i < event.target.length - 1; i++) {
+    //   console.dir(event.target[i].value);
+    // }
+    // console.dir(event.target.lastChild.value);
+    if (event.target.lastChild.value === 'SIGN IN') {
+      let login = event.target[0].value;
+      let password = event.target[1].value;
+      this.props.checkUser({ login, password });
+    }
   }
   render() {
   	const form = (
@@ -37,8 +44,14 @@ class Auth extends Component {
 	  <div id="__auth">
 	    <div className="wrapper">
 	      <h2>Welcome</h2>
-	      <button className={this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'change-auth focused' : 'change-auth'} onClick={this.props.authSignIn}>SIGN IN</button>
-	      <button className={this.props.auth[0].key.slice(0, 7) === 'sign_up' ? 'change-auth focused' : 'change-auth'} onClick={this.props.authSignUp}>SIGN UP</button>
+	      <button 
+          className={this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'change-auth focused' : 'change-auth'} 
+          onClick={this.props.authSignIn}
+        >SIGN IN</button>
+	      <button 
+          className={this.props.auth[0].key.slice(0, 7) === 'sign_up' ? 'change-auth focused' : 'change-auth'} 
+          onClick={this.props.authSignUp}
+        >SIGN UP</button>
 		  {form}
 	    </div>
 	  </div>
@@ -48,14 +61,16 @@ class Auth extends Component {
 
 function mapStateToProps(state) {
   return {
-	auth: state.auth
+	auth: state.auth,
+  user: state.user
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
 	authSignIn: actions.authSignIn,
-	authSignUp: actions.authSignUp
+	authSignUp: actions.authSignUp,
+  checkUser: actions.checkUser
   }, dispatch);
 }
 
