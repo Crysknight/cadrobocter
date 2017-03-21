@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 
 import * as actions from '../actions';
 
@@ -24,16 +24,16 @@ class Diagnostics extends Component {
   
 }
 
-// function mapStateToProps(state) {
-//   return {
+function mapStateToProps(state) {
+  return {
 	
-//   };
-// }
+  };
+}
 
-// function matchDispatchToProps(dispatch) {
-//   return bindActionCreators({
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
 	
-//   }, dispatch);
-// }
+  }, dispatch);
+}
 
 export default connect(mapStateToProps, matchDispatchToProps)(Diagnostics);

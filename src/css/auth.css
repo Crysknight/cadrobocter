@@ -1,31 +1,8 @@
 #__auth {
 	background-color: #c55;
 	height: 100%;
-	width: 100%;
-	position: absolute;
-	display: table;
 	text-align: center;
-}
-
-#__auth .wrapper {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-#__auth h2 {
-	color: #fff;
-	font-size: 70px;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-shadow: 
-		-2px -2px 0 #000,
-		-2px 0 0 #000,
-		-2px 2px 0 #000,
-		0px -2px 0 #000,
-		0px 2px 0 #000,
-		2px -2px 0 #000,
-		2px 0px 0 #000,
-		2px 2px 0 #000;
+	overflow: auto;
 }
 
 #__auth .change-auth {

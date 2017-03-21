@@ -28,7 +28,7 @@ export const checkUser = user => dispatch => {
       console.log('go away');
       dispatch({ type: 'CHECK_USER_FAILURE' });
     }
-  }, 800);
+  }, 300);
 };
 
 export const logOut = token => dispatch => {
@@ -37,5 +37,5 @@ export const logOut = token => dispatch => {
   	cookie.remove('login');
   	cookie.remove('token');
   	browserHistory.push('/auth');
-  }, 800);
+  }, 300);
 };

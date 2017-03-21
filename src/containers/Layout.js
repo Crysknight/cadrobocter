@@ -7,7 +7,7 @@ import * as actions from '../actions';
 
 //here be components
 
-import '../css/app.css';
+import '../css/layout.css';
 
 class App extends Component {
  //  constructor(props) {
@@ -17,9 +17,8 @@ class App extends Component {
 
   render() {
 	return (
-	  <div id="__app">
-	    <Link to="/auth">Login</Link>
-	    <button style={{display: 'block', marginTop: 30}} onClick={this.props.logOut}>Log out</button>
+	  <div id="__layout">
+	    <h1>Main Menu</h1>
 	  </div>
 	);
   }
@@ -38,3 +37,6 @@ function matchDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(App);
+
+// <Link to="/auth">Login</Link>
+// <button style={{display: 'block', marginTop: 30}} onClick={this.props.logOut}>Log out</button>

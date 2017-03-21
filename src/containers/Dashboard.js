@@ -7,9 +7,9 @@ import * as actions from '../actions';
 
 //here be components
 
-//import '../css/tracking.css';
+//import '../css/dashboard.css';
 
-class Tracking extends Component {
+class Dashboard extends Component {
 
   // constructor(props) {
 	// super(props);
@@ -18,10 +18,10 @@ class Tracking extends Component {
 
   render() {
 	return (
-	  <h1>Tracking</h1>
+	  <h2>Dashboard</h2>
 	);
   }
-  
+
 }
 
 function mapStateToProps(state) {
@@ -36,4 +36,4 @@ function matchDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Tracking);
+export default connect(mapStateToProps, matchDispatchToProps)(Dashboard);

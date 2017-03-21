@@ -47,7 +47,7 @@ class Auth extends Component {
 	return (
 	  <div id="__auth">
 	    <div className="wrapper">
-	      <h2>Welcome</h2>
+	      <h1>Welcome</h1>
 	      <button 
           className={this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'change-auth focused' : 'change-auth'} 
           onClick={this.props.authSignIn}
