@@ -1,0 +1,6 @@
+[
+	{ "keys": ["ctrl+alt+l"], "command": "insert_snippet", "args": {"contents": "console.log($0)"}},
+	{ "keys": ["ctrl+alt+d"], "command": "insert_snippet", "args": {"contents": "console.dir($0)"}},
+	{ "keys": ["ctrl+alt+n"], "command": "insert_snippet", "args": {"contents": "import React, { Component } from 'react';\nimport { bindActionCreators } from 'redux';\nimport { connect } from 'react-redux';\nimport { Link } from 'react-router';\n\nimport * as actions from '../actions';\n\n${3://here be components}\n\n//import '../css/${2:class}.css';\n\nclass ${1:CLASS} extends Component {\n\n  // constructor(props) {\n\t// super(props);\n\n  // }\n\n  render() {\n\treturn (\n\t  ${0:}\n\t);\n  }\n\n}\n\nfunction mapStateToProps(state) {\n  return {\n\t${4:}\n  };\n}\n\nfunction matchDispatchToProps(dispatch) {\n  return bindActionCreators({\n\t${5:}\n  }, dispatch);\n}\n\nexport default connect(mapStateToProps, matchDispatchToProps)(${1:CLASS});"}},
+	{ "keys": ["ctrl+alt+t"], "command": "insert_snippet", "args": {"contents": "import React, { Component } from 'react';\n\nexport default class ${1:CLASS} extends Component {\n\n  // constructor(props) {\n\t// super(props);\n\n  }\n\n  render() {\n\treturn (\n\t  ${0:}\n\t};\n  }\n\n}"}}
+]
