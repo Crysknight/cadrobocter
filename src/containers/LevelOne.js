@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
 
 import * as actions from '../actions';
 
 //here be components
 
-import '../css/spm.css';
+//import '../css/level-one.css';
 
-class SPM extends Component {
+class LevelOne extends Component {
 
   // constructor(props) {
 	// super(props);
@@ -18,18 +18,17 @@ class SPM extends Component {
 
   render() {
 	return (
-	  <div id="__spm">
-	    <h1>Safety & Peace-of-Mind</h1>
-	    <hr />
+	  <div id="__level_one">
+	    <h1>Level One</h1>
 	  </div>
 	);
   }
-  
+
 }
 
 function mapStateToProps(state) {
   return {
-	
+	levelOne: state.levelOne
   };
 }
 
@@ -39,4 +38,4 @@ function matchDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(SPM);
+export default connect(mapStateToProps, matchDispatchToProps)(LevelOne);

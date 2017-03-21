@@ -5,9 +5,35 @@
 	text-align: center;
 }
 
+.main-menu-link {
+	display: block;
+	width: 40%;
+	height: 70px;
+	background-color: #fff;
+	color: #000;
+	text-decoration: none;
+	border: 2px solid #000;
+	border-bottom: none;
+	margin: 0 auto;
+	padding-top: 40px;
+	font-size: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+	-webkit-box-shadow: 4px 4px 2px #333;
+	box-shadow: 4px 4px 2px #333;
+}
 
-/*
-#__layout {
-  background-color: #eff;
-  height: 100%;
-}*/
+.main-menu-link.disabled {
+	background-color: #ddd;
+	color: #888;
+	cursor: default;
+}
+
+.main-menu-link:first-of-type {
+	border-radius: 8px 8px 0 0;
+}
+
+.main-menu-link:last-of-type {
+	border-radius: 0 0 8px 8px;
+	border-bottom: 2px solid #000;
+}

@@ -1,0 +1,15 @@
+#__spm {
+	padding: 30px;
+}
+
+#__spm h1 {
+	margin: 0 0 15px 0;
+	text-transform: none;
+	font-size: 45px;
+}
+
+#__spm hr {
+	border: none;
+	height: 15px;
+	background-color: #55e;
+}

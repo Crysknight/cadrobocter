@@ -21,8 +21,8 @@ export const checkUser = user => dispatch => {
     ) {
       console.log('welcome');
       dispatch({ type: 'CHECK_USER_SUCCESS', payload: { ...user, token: 'f3q9fj948399fj' } });
-      cookie.save('login', user.login);
-      cookie.save('token', 'f3q9fj948399fj');
+      cookie.save('login', user.login, { maxAge: 1800 });
+      cookie.save('token', 'f3q9fj948399fj', { maxAge: 1800 });
       browserHistory.push('/');
     } else {
       console.log('go away');

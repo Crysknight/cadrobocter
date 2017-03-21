@@ -15,6 +15,7 @@ import SPM from './containers/SPM';
 import Diagnostics from './containers/Diagnostics';
 import Tracking from './containers/Tracking';
 import Garage from './containers/Garage';
+import LevelOne from './containers/LevelOne';
 
 
 import MasterPage from './components/MasterPage';
@@ -51,6 +52,7 @@ ReactDOM.render(
       <Route path="/full-diagnostics" component={Diagnostics} />
       <Route path="/vehicle-tracking" component={Tracking} />
       <Route path="/my-garage" component={Garage} />
+      <Route path="/ticket/:id" component={LevelOne} />
     </Route>
   </Router>
 </Provider>,
