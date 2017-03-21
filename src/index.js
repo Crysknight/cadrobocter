@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -53,6 +53,7 @@ ReactDOM.render(
       <Route path="/vehicle-tracking" component={Tracking} />
       <Route path="/my-garage" component={Garage} />
       <Route path="/ticket/:id" component={LevelOne} />
+      <Redirect from="/ticket" to="/ticket/id_1" />
     </Route>
   </Router>
 </Provider>,

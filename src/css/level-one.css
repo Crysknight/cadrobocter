@@ -1,0 +1,158 @@
+#__level_one_404 {
+    height: 100%;
+    text-align: center;
+    background-color: #e55;
+    overflow: auto;
+}
+
+#__level_one_404 h1 {
+	margin-top: 10%;
+}
+
+#__level_one_404 h3:first-of-type {
+	color: #fff;
+	text-shadow: 
+		-2px -2px 0 #000,
+		-2px 0 0 #000,
+		-2px 2px 0 #000,
+		0px -2px 0 #000,
+		0px 2px 0 #000,
+		2px -2px 0 #000,
+		2px 0px 0 #000,
+		2px 2px 0 #000;
+}
+
+#__level_one_404 .spoiler {
+	margin-top: 0;
+	background-color: #f99;
+	color: #f99;
+}
+
+#__level_one_404 .spoiler:hover {
+	background-color: transparent;
+	color: #fff;
+	text-shadow: 
+		-2px -2px 0 #000,
+		-2px 0 0 #000,
+		-2px 2px 0 #000,
+		0px -2px 0 #000,
+		0px 2px 0 #000,
+		2px -2px 0 #000,
+		2px 0px 0 #000,
+		2px 2px 0 #000
+}
+
+#__level_one {
+	padding: 30px;
+}
+
+#__level_one > h2 {
+	margin: 0 0 15px 0;
+	text-transform: none;
+	font-size: 40px;
+	color: #fff;
+	text-shadow: 
+		-2px -2px 0 #000,
+		-2px 0 0 #000,
+		-2px 2px 0 #000,
+		0px -2px 0 #000,
+		0px 2px 0 #000,
+		2px -2px 0 #000,
+		2px 0px 0 #000,
+		2px 2px 0 #000
+}
+
+#__level_one h1 {
+	margin-top: 40px;
+	font-size: 60px;
+	text-shadow: 
+		-2px -2px 0 #000,
+		-2px 0 0 #000,
+		-2px 2px 0 #000,
+		0px -2px 0 #000,
+		0px 2px 0 #000,
+		2px -2px 0 #000,
+		2px 0px 0 #000,
+		2px 2px 0 #000,
+		2px 2px 8px #000;
+}
+
+#__level_one hr {
+	border: none;
+	height: 15px;
+	background-color: #3c3;
+}
+
+#__level_one .info-block, #__level_one .visual-block {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+#__level_one .info-block hr {
+	margin-top: 30px;
+	border: none;
+	height: 2px;
+	background-color: #000;
+}
+
+#__level_one .info-block h2 {
+	margin-top: 40px;
+}
+
+#__level_one .info-block p {
+	padding-right: 20px;
+}
+
+#__level_one .stuff-list {
+	display: inline-block;
+	vertical-align: top;
+	width: 33.333%;
+}
+
+#__level_one h3 {
+	margin: 8px 0 4px 0;
+}
+
+#__level_one ul {
+	padding: 0 15px;
+	margin-top: 4px;
+}
+
+#__level_one ul li {
+	list-style-type: none;
+}
+
+#__level_one .info-block .tag {
+	display: inline-block;
+	vertical-align: top;
+	height: 45px;
+	width: 21%;
+	margin: 25px 4% 0 0;
+	padding: 5px 2%;
+	background-color: #eee;
+	border: 2px solid #000;
+	border-radius: 0 0 10px 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#__level_one .info-block .tag:nth-child(4n) {
+	margin-left: 0;
+}
+
+#__level_one .scale-wrapper {
+	margin-top: 40px;
+}
+
+#__level_one .scale-wrapper {
+	display: inline-block;
+	width: 30%;
+	height: 60px;
+	margin: 10px 3% 0 -4px;
+}
+
+#__level_one .scale-wrapper:nth-child(n) {
+	margin-left: 0;
+}

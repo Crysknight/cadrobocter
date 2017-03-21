@@ -6,28 +6,34 @@ export default function() {
 			testDifficulty: 1,
 			repairDifficulty: 2,
 			name: 'Engine Vibration',
-			shortDescription: 'This problem is very common',
+			shortDescription: `This problem is very common. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque urna magna, 
+			  a scelerisque tellus placerat ac. Etiam eu maximus diam. Etiam ac odio lectus. Praesent lobortis ex ipsum, ut tristique enim elementum a. 
+			  Vivamus semper ut dui sit amet lacinia. Aliquam ac lorem vitae massa faucibus vulputate. Nunc laoreet lorem eu erat molestie, ut mollis eros 
+			  posuere. Cras maximus enim in facilisis tempor. Duis facilisis odio id lobortis interdum. Etiam quam odio, sollicitudin nec egestas vel, 
+			  dignissim at orci. Fusce nec sagittis nunc. Sed pulvinar magna at sem scelerisque, a tincidunt lectus vehicula. Curabitur id nisi mi. Donec 
+			  tempus risus in varius mattis. Maecenas accumsan eros eu mattis ultricies.`,
 			location: 'Exterior Walkaround',
 			causes: [
 				'age',
 				'wrong repair' 
 			],
-			symptomsAndThreats: {
-				symptoms: [
-					'clattering',
-					'clanking',
-					'cancer'
-				],
-				threats: [
-					'serious obstruction',
-					'cancer',
-					'better fix it'
-				]
-			},
+			symptoms: [
+				'clattering',
+				'clanking',
+				'cancer'
+			],
+			threats: [
+				'serious obstruction',
+				'cancer',
+				'better fix it'
+			],
 			tools: [],
 			tags: [
 				'Engine',
-				'No tools required'
+				'No tools required',
+				'Some tag',
+				'Some other tag',
+				'And a fifth one'
 			],
 			photos: [
 			],
@@ -40,24 +46,27 @@ export default function() {
 			testDifficulty: 1,
 			repairDifficulty: 3,
 			name: 'Visible Leaks',
-			shortDescription: 'This problem is very common',
+			shortDescription: `This problem is very common. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque urna magna, 
+			  a scelerisque tellus placerat ac. Etiam eu maximus diam. Etiam ac odio lectus. Praesent lobortis ex ipsum, ut tristique enim elementum a. 
+			  Vivamus semper ut dui sit amet lacinia. Aliquam ac lorem vitae massa faucibus vulputate. Nunc laoreet lorem eu erat molestie, ut mollis eros 
+			  posuere. Cras maximus enim in facilisis tempor. Duis facilisis odio id lobortis interdum. Etiam quam odio, sollicitudin nec egestas vel, 
+			  dignissim at orci. Fusce nec sagittis nunc. Sed pulvinar magna at sem scelerisque, a tincidunt lectus vehicula. Curabitur id nisi mi. Donec 
+			  tempus risus in varius mattis. Maecenas accumsan eros eu mattis ultricies.`,
 			location: 'Exterior Walkaround',
 			causes: [
 				'age',
 				'wrong repair',
 				'stupidity'
 			],
-			symptomsAndThreats: {
-				symptoms: [
-					'water',
-					'more water'
-				],
-				threats: [
-					'serious obstruction',
-					'cancer',
-					'also herpes'
-				]
-			},
+			symptoms: [
+				'water',
+				'more water'
+			],
+			threats: [
+				'serious obstruction',
+				'cancer',
+				'also herpes'
+			],
 			tools: [],
 			tags: [
 				'Engine',
@@ -82,17 +91,15 @@ export default function() {
 				'wrong repair',
 				'stupidity (probably)'
 			],
-			symptomsAndThreats: {
-				symptoms: [
-					'liquids',
-					'in',
-					'exhaust'
-				],
-				threats: [
-					'serious obstruction',
-					'Chuck Norris will come for you'
-				]
-			},
+			symptoms: [
+				'liquids',
+				'in',
+				'exhaust'
+			],
+			threats: [
+				'serious obstruction',
+				'Chuck Norris will come for you'
+			],
 			tools: [],
 			tags: [
 				'Engine',

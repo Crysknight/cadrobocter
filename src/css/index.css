@@ -31,3 +31,48 @@ h1 {
 		2px 0px 0 #000,
 		2px 2px 0 #000;
 }
+
+.spoiler {
+	background-color: #eee;
+	color: #eee;
+	text-shadow: none;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.spoiler:hover {
+	background-color: transparent;
+	color: #000;
+}
+
+.scale-label {
+	font-weight: bold;
+}
+
+.scale > div {
+	display: inline-block;
+	width: 30%;
+	height: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 2px solid #000;
+	margin: 10px 3% 0 0;
+	border-radius: 3px;
+}
+
+.scale .easy:first-child {
+	background-color: #3c3;
+}
+
+.scale .medium {
+	background-color: #ee5;
+}
+
+.scale .medium:last-child {
+	background-color: transparent;
+}
+
+.scale .hard {
+	background-color: #c33;
+}
