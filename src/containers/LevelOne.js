@@ -28,10 +28,10 @@ class LevelOne extends Component {
   	let ticket = this.props.ticketLevelOne;
 	return (
 	  <div id="__level_one">
-	    <h2>Overall information</h2>
+	    <h1>{ticket.name}</h1>
 	    <hr />
 	    <div className="info-block">
-	      <h1>{ticket.name}</h1>
+	      <h2>Overall information</h2>
 	      <p>{ticket.shortDescription}</p>
 	      <hr />
 	      <div className="stuff-list">
