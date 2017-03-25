@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 
 import * as actions from '../actions';
 
@@ -11,9 +10,9 @@ import '../css/level-one.css';
 
 class LevelOne extends Component {
 
-  constructor(props) {
-	super(props);
-  }
+  // constructor(props) {
+		// super(props);
+  // }
 
   render() {
   	if (!this.props.ticketLevelOne) {
