@@ -18,39 +18,35 @@ class SPM extends Component {
 
   render() {
   	let previews = this.props.ticketPreview.map((preview) => {
-  		let toolsImage = 'file:///C:/node/cadrobocter/public/images/';
-  		// let toolsImage = '../../public/images/'; //The code above is temporary, and this is the right one for production
+  	let toolsImage = '';
   		switch (true) {
   			case (preview.tools === 0): {
-  				toolsImage += 'wrench-0.png';
+  				toolsImage += 'wrench-0';
   				break;
   			}
   			case (preview.tools >= 1 && preview.tools < 4): {
-  				toolsImage += 'wrench-1.png';
+  				toolsImage += 'wrench-1';
   				break;
   			}
   			case (preview.tools >= 4 && preview.tools < 7): {
-  				toolsImage += 'wrench-4.png';
+  				toolsImage += 'wrench-4';
   				break;
   			}
   			case (preview.tools >= 7): {
-  				toolsImage += 'wrench-7.png';
+  				toolsImage += 'wrench-7';
   				break;
   			}
   			default: {
   				toolsImage += 'error.png';
   			}
   		}
-  		// if (preview.tools == 0) {
-  		// 	toolsImage += 'wrench-0.png';
-  		// } else if (preview.tools )
   		return (
   			<TicketPreview 
   				key={preview.id} 
   				title={preview.name} 
   				tools={toolsImage} />
   		);
-  	})
+  	});
 		return (
 		  <div id="__spm">
 		    <h1>Safety & Peace-of-Mind</h1>
