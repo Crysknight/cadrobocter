@@ -44,14 +44,19 @@ class SPM extends Component {
   			<TicketPreview 
   				key={preview.id} 
   				title={preview.name} 
-  				tools={toolsImage} />
+  				tools={toolsImage}
+  				photo={preview.photo} />
   		);
   	});
 		return (
 		  <div id="__spm">
 		    <h1>Safety & Peace-of-Mind</h1>
 		    <hr />
-		    {previews}
+		  	<div className="tickets">
+			    {previews}
+			  </div>
+			  <div className="filters">
+			  </div>
 		  </div>
 		);
   }

@@ -13,3 +13,64 @@
 	height: 15px;
 	background-color: #55e;
 }
+
+#__spm .tickets {
+	display: inline-block;
+	width: 75%;
+	vertical-align: top;
+}
+
+#__spm .filters {
+	display: inline-block;
+	width: 25%;
+	vertical-align: top;
+}
+
+#__spm .ticket-preview {
+	display: inline-block;
+	width: 30%;
+	height: 120px;
+	vertical-align: top;
+	margin: 15px 1.5% 0px 1.5%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	border-radius: 8px;
+	-webkit-box-shadow: -2px -2px 2px #eee;
+	box-shadow: -2px -2px 2px #eee;
+	overflow: hidden;
+}
+
+#__spm .preview-photo, #__spm .preview-info {
+	display: inline-block;
+	width: 33.4%;
+	height: 100%;
+	vertical-align: top;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+
+#__spm .preview-info {
+	padding-left: 7px;
+	width: 66.6%;
+}
+
+#__spm .preview-info h3 {
+	font-size: 14px;
+	margin: 8px 0 4px 0;
+}
+
+#__spm .tools-req {
+	width: 25px;
+}
+
+#__spm .preview-photo-img {
+	height: 100%;
+	position: absolute;
+	left: 0;
+}
