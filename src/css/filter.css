@@ -1,0 +1,53 @@
+.filter {
+	display: block;
+	padding: 15px;
+	border: 2px solid #000;
+	border-radius: 8px;
+	position: relative;
+}
+
+.filter h3 {
+	margin: 4px 0 4px 0;
+}
+
+.filter .caret, .filter .arrow {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	right: 15px;
+	top: 18px;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+.filter .caret.caret-down {
+	background-image: url('../../public/images/caret-down.png');
+}
+
+.filter .caret.caret-up {
+	background-image: url('../../public/images/caret-up.png');
+}
+
+.filter .caret.caret-left {
+	background-image: url('../../public/images/caret-left.png');
+}
+
+.filter .caret.caret-right {
+	background-image: url('../../public/images/caret-right.png');
+}
+
+.filter .arrow.arrow-down {
+	background-image: url('../../public/images/arrow-down.png');
+}
+
+.filter .arrow.arrow-up {
+	background-image: url('../../public/images/arrow-up.png');
+}
+
+.filter .arrow.arrow-left {
+	background-image: url('../../public/images/arrow-left.png');
+}
+
+.filter .arrow.arrow-right {
+	background-image: url('../../public/images/arrow-right.png');
+}

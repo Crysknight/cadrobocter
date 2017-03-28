@@ -29,9 +29,10 @@
 #__spm .ticket-preview {
 	display: inline-block;
 	width: 30%;
-	height: 120px;
+	height: 140px;
 	vertical-align: top;
 	margin: 15px 1.5% 0px 1.5%;
+	background-color: #000;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -45,19 +46,22 @@
 
 #__spm .preview-photo, #__spm .preview-info {
 	display: inline-block;
-	width: 33.4%;
+	width: 50%;
 	height: 100%;
 	vertical-align: top;
+	background-color: #fff;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
+	color: #000;
 }
 
 #__spm .preview-info {
 	padding-left: 7px;
-	width: 66.6%;
+	width: 50%;
+	font-size: 11px;
 }
 
 #__spm .preview-info h3 {
@@ -65,12 +69,41 @@
 	margin: 8px 0 4px 0;
 }
 
+#__spm .preview-info hr {
+	height: 1px;
+	background-color: #000;
+	margin: 2px 0 4px -5%;
+}
+
+#__spm .preview-info .preview-location {
+	margin: 5px 0;
+	color: #666;
+}
+
 #__spm .tools-req {
-	width: 25px;
+	width: 20px;
+	margin: 0 0 -5px 10px;
 }
 
 #__spm .preview-photo-img {
 	height: 100%;
 	position: absolute;
 	left: 0;
+}
+
+#__spm .scale-wrapper > div {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	margin-top: 7px;
+}
+
+#__spm .scale div {
+	height: 10px;
+	margin: 2px 3% 0 0;
+}
+
+#__spm .filters h2 {
+	font-size: 28px;
+	text-transform: uppercase;
 }

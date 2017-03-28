@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
+import Filter from './Filter';
+
 import TicketPreview from '../components/ticket-preview';
 
 import '../css/spm.css';
@@ -43,7 +45,12 @@ class SPM extends Component {
   		return (
   			<TicketPreview 
   				key={preview.id} 
-  				title={preview.name} 
+          id={preview.id}
+  				title={preview.name}
+          location={preview.location}
+          importance={preview.imp}
+          testDifficulty={preview.cod}
+          repairDifficulty={preview.cor} 
   				tools={toolsImage}
   				photo={preview.photo} />
   		);
@@ -56,6 +63,9 @@ class SPM extends Component {
 			    {previews}
 			  </div>
 			  <div className="filters">
+          <h2>Filters</h2>
+          <button className="fold-filters"></button>
+          <Filter filterName="By alphabet" indicatorType="arrow" indicator="down" />
 			  </div>
 		  </div>
 		);

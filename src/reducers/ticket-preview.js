@@ -6,8 +6,8 @@ export default function (state, action) {
 			location: 'engine bay',
 			photo: 'tp-1',
 			tools: 0,
-			imp: 3,
-			cor: 3,
+			imp: 2,
+			cor: 2,
 			cod: 1,
 			safety: true
 		},
@@ -17,9 +17,9 @@ export default function (state, action) {
 			location: 'engine bay',
 			photo: 'tp-2',
 			tools: 0,
-			imp: 3,
+			imp: 2,
 			cor: 3,
-			cod: 3,
+			cod: 1,
 			safety: false
 		},
 		{
@@ -28,8 +28,8 @@ export default function (state, action) {
 			location: 'rear lifted',
 			photo: 'tp-3',
 			tools: 0,
-			imp: 2,
-			cor: 2,
+			imp: 3,
+			cor: 3,
 			cod: 1,
 			safety: true
 		},
