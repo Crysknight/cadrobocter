@@ -101,7 +101,7 @@ export default function (state, action) {
 		},
 		{
 			id: 10,
-			name: 'Warp engine bay clinking',
+			name: 'Warp engine clinking',
 			location: 'engine bay',
 			photo: 'tp-10',
 			tools: 100,
@@ -168,7 +168,7 @@ export default function (state, action) {
 		{
 			id: 16,
 			name: 'Broken part 6',
-			location: 'Front',
+			location: 'front',
 			photo: 'tp-16',
 			tools: 0,
 			imp: 1,

@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-import Filter from './Filter';
-
+import Filter from '../components/filter';
 import TicketPreview from '../components/ticket-preview';
 
 import '../css/spm.css';
+import '../css/filter.css';
 
 class SPM extends Component {
 
@@ -65,7 +65,9 @@ class SPM extends Component {
 			  <div className="filters">
           <h2>Filters</h2>
           <button className="fold-filters"></button>
-          <Filter filterName="By alphabet" indicatorType="arrow" indicator="down" />
+          <Filter filterName="By alphabet" indicatorType="arrow" indicator="down">
+            <p>Hello</p>
+          </Filter>
 			  </div>
 		  </div>
 		);

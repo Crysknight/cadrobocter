@@ -6,6 +6,7 @@ import ticketLevelOne from './ticket-level-one';
 import ticketPreview from './ticket-preview';
 import auth from './auth';
 import garage from './garage';
+import filters from './filters';
 
 const allReducers = combineReducers({
   routing: routerReducer,
@@ -13,7 +14,8 @@ const allReducers = combineReducers({
   ticketLevelOne,
   ticketPreview,
   auth,
-  garage
+  garage,
+  filters
 });
 
 export default allReducers;

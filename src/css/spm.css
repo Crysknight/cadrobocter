@@ -61,7 +61,7 @@
 #__spm .preview-info {
 	padding-left: 7px;
 	width: 50%;
-	font-size: 11px;
+	font-size: 10px;
 }
 
 #__spm .preview-info h3 {
@@ -81,21 +81,28 @@
 }
 
 #__spm .tools-req {
-	width: 20px;
-	margin: 0 0 -5px 10px;
+	width: 17px;
+	margin: 0 0 -5px 18px;
 }
 
 #__spm .preview-photo-img {
 	height: 100%;
 	position: absolute;
-	left: 0;
+	left: -20px;
 }
 
 #__spm .scale-wrapper > div {
 	display: inline-block;
-	width: 48%;
 	vertical-align: top;
 	margin-top: 7px;
+}
+
+#__spm .scale-wrapper .scale-label {
+	width: 60%;
+}
+
+#__spm .scale-wrapper .scale {
+	width: 39%;
 }
 
 #__spm .scale div {
