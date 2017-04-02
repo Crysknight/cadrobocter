@@ -66,7 +66,6 @@ class SPM extends Component {
           <h2>Filters</h2>
           <button className="fold-filters"></button>
           <Filter filterName="By alphabet" indicatorType="arrow" indicator="down">
-            <p>Hello</p>
           </Filter>
 			  </div>
 		  </div>
