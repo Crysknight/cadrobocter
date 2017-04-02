@@ -23,6 +23,7 @@ export default class TicketPreview extends Component {
 				  	<h3>{this.props.title}</h3>
 				  	<hr />
 				  	<p className="preview-location"><b>Location:</b> {this.props.location}</p>
+				  	<p className="preview-location"><b>Mech. group:</b> {this.props.mechanicalGroup}</p>
 				  	<div className="info-block"><b>Tools required: </b><img className="tools-req" src={this.state.tools} alt="" /></div>
 					  <ColorScale level={this.props.importance} label="Importance" />
 					  <ColorScale level={this.props.testDifficulty} label="Test difficulty" />

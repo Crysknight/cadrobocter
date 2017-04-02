@@ -29,7 +29,7 @@
 #__spm .ticket-preview {
 	display: inline-block;
 	width: 30%;
-	height: 140px;
+	height: 160px;
 	vertical-align: top;
 	margin: 15px 1.5% 0px 1.5%;
 	background-color: #000;
@@ -42,6 +42,14 @@
 	-webkit-box-shadow: -2px -2px 2px #eee;
 	box-shadow: -2px -2px 2px #eee;
 	overflow: hidden;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+#__spm .ticket-preview:hover {
+	-webkit-box-shadow: 0 0 15px #888;
+	box-shadow: 0 0 15px #888;
 }
 
 #__spm .preview-photo, #__spm .preview-info {

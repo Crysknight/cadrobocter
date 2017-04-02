@@ -12,7 +12,8 @@ export default function() {
 			  posuere. Cras maximus enim in facilisis tempor. Duis facilisis odio id lobortis interdum. Etiam quam odio, sollicitudin nec egestas vel, 
 			  dignissim at orci. Fusce nec sagittis nunc. Sed pulvinar magna at sem scelerisque, a tincidunt lectus vehicula. Curabitur id nisi mi. Donec 
 			  tempus risus in varius mattis. Maecenas accumsan eros eu mattis ultricies.`,
-			location: 'Exterior Walkaround',
+			location: 'Test-drive',
+			mechanicalGroup: 'Engine',
 			causes: [
 				'age',
 				'wrong repair' 
@@ -52,7 +53,8 @@ export default function() {
 			  posuere. Cras maximus enim in facilisis tempor. Duis facilisis odio id lobortis interdum. Etiam quam odio, sollicitudin nec egestas vel, 
 			  dignissim at orci. Fusce nec sagittis nunc. Sed pulvinar magna at sem scelerisque, a tincidunt lectus vehicula. Curabitur id nisi mi. Donec 
 			  tempus risus in varius mattis. Maecenas accumsan eros eu mattis ultricies.`,
-			location: 'Exterior Walkaround',
+			location: 'Engine bay',
+			mechanicalGroup: 'Engine',
 			causes: [
 				'age',
 				'wrong repair',
@@ -86,6 +88,7 @@ export default function() {
 			shortDescription: `The word "Liquids" looks similar to "Squids",
 				but squids in exhaust would be more dangerous, wouldn't they?`,
 			location: 'Exterior Walkaround',
+			mechanicalGroup: 'Engine',
 			causes: [
 				'not squids',
 				'wrong repair',

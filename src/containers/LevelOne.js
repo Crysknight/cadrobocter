@@ -77,7 +77,7 @@ function mapStateToProps(state, ownProps) {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-	
+		defaultAction: actions.defaultAction
   }, dispatch);
 }
 
