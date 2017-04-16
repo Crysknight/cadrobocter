@@ -1,16 +1,38 @@
+/* 
+
+HOW FILTERS WORK
+
+State of a filter
+
+id: no comments
+name: displays in the title
+type: 'switch', 'dropdown' and 'direction'
+	('switch' - means two states - 'status: 0 and 1'.
+	'dropdown' - statuses are: 0 for folded dropdown, 1 for unfolded, 2 for dropdown with a chosen option
+	'direction' - statuses are: 0 for inactive, 1 for active first direction, 2 for active second direction, except for alphabet, that is always either 1 or 2)
+status: described above
+sortsBy: name of a property in the 'ticket-preview' reducer
+
+User scenario
+
+User enters the ticket section, which starts uploading the tickets. On the upload tickets are sorted programmaticaly by alphabet - direction down.
+Further aphabet sorting is provided by the reducer inside method, if User choosing the alphabet sorting option. This means, alphabet sorting is always enabled.
+If User clicks on the 
+*/
+
 const initState = [
 	{
 		id: 0,
 		name: 'By alphabet',
-		type: 'switch',
+		type: 'direction',
+		status: 1,
 		sortsBy: 'name',
-		enabled: true,
-		active: false
 	},
 	{
 		id: 1,
 		name: 'By location',
 		type: 'dropdown',
+		group: 'dropdowns',
 		filtersBy: 'location',
 		enabled: true,
 		active: false,
@@ -20,13 +42,13 @@ const initState = [
 			'rear - lifted',
 			'front - lifted',
 			'test-drive'
-		],
-		activeUnit: undefined
+		]
 	},
 	{
 		id: 2,
 		name: 'By mechanical group',
 		type: 'dropdown',
+		group: '',
 		filtersBy: 'mechanicalGroup',
 		enabled: true,
 		active: false,
@@ -40,13 +62,13 @@ const initState = [
 			'brakes',
 			'body & paint',
 			'glass'
-		],
-		activeUnit: undefined
+		]
 	},
 	{
 		id: 3,
 		name: 'By tools required',
 		type: 'switch',
+		group: '',
 		sortsBy: 'tools',
 		enabled: true,
 		active: false
@@ -55,6 +77,7 @@ const initState = [
 		id: 4,
 		name: 'By complexity of repair',
 		type: 'switch',
+		group: '',
 		enabled: true,
 		active: false,
 		sortsBy: 'cor'
@@ -63,6 +86,7 @@ const initState = [
 		id: 5,
 		name: 'By complexity of diagnose',
 		type: 'switch',
+		group: '',
 		sortsBy: 'cod',
 		enabled: true,
 		active: false
@@ -71,6 +95,7 @@ const initState = [
 		id: 6,
 		name: 'By importance',
 		type: 'switch',
+		group: '',
 		sortsBy: 'imp',
 		enabled: true,
 		active: false
@@ -79,6 +104,7 @@ const initState = [
 		id: 7,
 		name: 'By symptom type',
 		type: 'dropdown',
+		group: '',
 		filtersBy: 'symptoms',
 		enabled: false,
 		active: false,
