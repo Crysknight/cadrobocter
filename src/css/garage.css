@@ -1,0 +1,46 @@
+#__garage {
+	padding: 30px;
+}
+
+#__garage h1 {
+    margin: 0 0 15px 0;
+    text-transform: none;
+    font-size: 45px;
+}
+
+#__garage hr {
+	border: none;
+	height: 15px;
+	background-color: #d93;
+}
+
+.garage-checkbox {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	height: 70px;
+	padding-left: 40px;
+	font-size: 24px;
+}
+
+input[type="radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 30px;
+	height: 30px;
+	background-image: url('../../public/images/checkbox-unchecked.png');
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	margin: 0 0 0 15px;
+}
+
+input[type="radio"]:checked {
+	background-image: url('../../public/images/checkbox-checked.png');
+}
+
+input[type="radio"]:focus {
+	outline: none;
+}
