@@ -30,7 +30,7 @@
 	display: none;
 }
 
-.filter.dropdown.enabled {
+.filter.enabled {
 	background-color: #d9d9ee;
 	-webkit-box-shadow: 2px 2px 2px #888;
 	box-shadow: 2px 2px 2px #888;
@@ -74,12 +74,24 @@
 	background-image: url('../../public/images/caret-up.png');
 }
 
+.filter .caret.caret-cross {
+	background-image: url('../../public/images/cross.png');
+}
+
 .filter .arrow.arrow-down {
 	background-image: url('../../public/images/arrow-down.png');
 }
 
 .filter .arrow.arrow-up {
 	background-image: url('../../public/images/arrow-up.png');
+}
+
+.filter .checkbox.checkbox-unchecked {
+	background-image: url('../../public/images/checkbox-unchecked.png');
+}
+
+.filter .checkbox.checkbox-checked {
+	background-image: url('../../public/images/checkbox-checked.png');
 }
 
 .filter .dropdown-items {

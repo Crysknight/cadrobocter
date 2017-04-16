@@ -9,7 +9,7 @@ export default class DropdownItem extends Component {
 	}
 
 	handleClick(e) {
-		this.props.handleDropdownItemClick(this.props.filterId, e.target.innerText.toLowerCase());
+		this.props.handleDropdownItemClick(this.props.filter, e.target.innerText.toLowerCase());
 	}
 
 	render() {

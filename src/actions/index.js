@@ -23,28 +23,24 @@ export function authSignUp() {
 /* < FILTER ACTIONS > */
 /* ======================================================================================================================= */
 
-// export function triggerFilter(filterId, filterType, isFilterActive, filterSortsBy) {
-//   return {
-//     type: 'TRIGGER_FILTER',
-//     payload: {
-//       filterId,
-//       filterType,
-//       isFilterActive,
-//       filterSortsBy
-//     }
-//   }
-// };
+export function triggerFilter(filter) {
+  return {
+    type: 'TRIGGER_FILTER',
+    payload: {
+      filter
+    }
+  }
+};
 
-// export function chooseDropdown(filterId, filtersBy, unit) {
-//   return {
-//     type: 'CHOOSE_DROPDOWN',
-//     payload: {
-//       filterId,
-//       filtersBy,
-//       unit
-//     }
-//   }
-// }
+export function chooseDropdown(filter, unit) {
+  return {
+    type: 'CHOOSE_DROPDOWN',
+    payload: {
+      filter,
+      unit
+    }
+  }
+}
 
 /* ======================================================================================================================= */
 /* </ FILTER ACTIONS > */

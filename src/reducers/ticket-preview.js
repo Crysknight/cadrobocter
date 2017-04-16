@@ -270,6 +270,10 @@ let sortTickets = (criteria, order, alphabetOrder) => (a, b) => {
 
 export default function (state = initState, action) {
 	switch (action.type) {
+		case 'CHOOSE_DROPDOWN': {
+			console.log(action.payload);
+			return state;
+		}
 		// case 'TRIGGER_FILTER': {
 		// 	let newState = [ ...state ];
 		// 	if (action.payload.filterType === 'switch') {
