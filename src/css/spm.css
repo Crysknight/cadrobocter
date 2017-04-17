@@ -48,8 +48,9 @@
 }
 
 #__spm .ticket-preview:hover {
-	-webkit-box-shadow: 0 0 15px #888;
-	box-shadow: 0 0 15px #888;
+	-webkit-box-shadow: 5px 5px 15px #888;
+	box-shadow: 5px 5px 15px #888;
+	transform: matrix(1, 0, 0, 1, -5, -5);
 }
 
 #__spm .preview-photo, #__spm .preview-info {

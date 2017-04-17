@@ -25,32 +25,32 @@ class SPM extends Component {
   //   console.log(newProps.filters);
   // }
 
-  handleFilterClick(filterId, filterType, sortsBy) {
-    this.props.triggerFilter(filterId, filterType, this.props.filters[filterId].active, sortsBy);
+  handleFilterClick(filter) {
+    this.props.triggerFilter(filter);
   }
 
-  handleDropdownItemClick(filterId, itemText) {
-    this.props.chooseDropdown(filterId, this.props.filters[filterId].filtersBy, itemText);
+  handleDropdownItemClick(filter, itemText) {
+    this.props.chooseDropdown(filter, itemText);
   }
 
   createPreviews() {
-    let ticket = this.props.ticketPreview.filter((preview) => preview.display);
+    let ticket = this.props.ticketPreview.tickets.filter((preview) => !preview.filtered);
     return ticket.map((preview) => {
       let toolsImage;
       switch (true) {
-        case (preview.tools === 0): {
+        case (preview.toolsComplexity === 0): {
           toolsImage = 'wrench-0';
           break;
         }
-        case (preview.tools >= 1 && preview.tools < 4): {
+        case (preview.toolsComplexity >= 1 && preview.toolsComplexity < 4): {
           toolsImage = 'wrench-1';
           break;
         }
-        case (preview.tools >= 4 && preview.tools < 7): {
+        case (preview.toolsComplexity >= 4 && preview.toolsComplexity < 7): {
           toolsImage = 'wrench-4';
           break;
         }
-        case (preview.tools >= 7): {
+        case (preview.toolsComplexity >= 7): {
           toolsImage = 'wrench-7';
           break;
         }
@@ -77,40 +77,92 @@ class SPM extends Component {
   createFilters() {
     return this.props.filters.map(filter => {
       let DropdownItems;
+      let indicatorType;
       let indicator;
-      if (filter.type === 'switch') {
-        indicator = filter.active ? 'up': 'down';
-      } else {
-        indicator = filter.unfolded ? 'up': 'down';
-      }
-      if (filter.type === 'dropdown') {
-        DropdownItems = (
-          <ul className="dropdown-items">
-            {filter.units.map((unit, index) => {
-              return (
-                <DropdownItem 
-                  filterId={filter.id} 
-                  handleDropdownItemClick={this.handleDropdownItemClick} 
-                  key={index}
-                  active={filter.activeUnit === unit}>
-                {unit}
-                </DropdownItem>
-              );
-            })}
-          </ul>
-        );
+      switch (filter.type) {
+        case 'switch': {
+          indicatorType = 'checkbox';
+          switch (filter.status) {
+            case 0: {
+              indicator = 'unchecked';
+              break;
+            }
+            case 1: {
+              indicator = 'checked';
+              break;
+            }
+            default: {
+              console.log('error from createFilters: wrong filter.status');
+            }
+          }
+          break;
+        }
+        case 'direction': {
+          indicatorType = 'arrow';
+          switch (filter.status) {
+            case 0: {
+              indicator = '';
+              break;
+            }
+            case 1: {
+              indicator = 'down';
+              break;
+            }
+            case 2: {
+              indicator = 'up';
+              break;
+            }
+            default: {
+              console.log('error from createFilters: wrong filter.status');
+            }
+          }
+          break;
+        }
+        case 'dropdown': {
+          indicatorType = 'caret';
+          switch (filter.status) {
+            case 0: {
+              indicator = 'down';
+              break;
+            }
+            case 1: {
+              indicator = 'up';
+              break;
+            }
+            case 2: {
+              indicator = 'cross';
+              break;
+            }
+            default: {
+              console.log('error from createFilters: wrong filter.status');
+            }
+          }
+          DropdownItems = (
+            <ul className="dropdown-items">
+              {filter.units.map((unit, index) => {
+                return (
+                  <DropdownItem 
+                    filter={filter} 
+                    handleDropdownItemClick={this.handleDropdownItemClick} 
+                    key={index}
+                    active={filter.activeUnit === unit}>
+                  {unit}
+                  </DropdownItem>
+                );
+              })}
+            </ul>
+          );
+          break;
+        }
+        default: {
+          console.log('error from createFilters: wrong filter.type');
+        }
       }
       return (
         <Filter 
           key={filter.id}
-          filterId={filter.id}
-          enabled={filter.enabled}
-          type={filter.type}
-          sortsBy={filter.sortsBy}
-          active={filter.active}
-          unfolded={filter.unfolded}
-          filterName={filter.name}
-          indicatorType={filter.type === 'switch' ? 'arrow': 'caret'}
+          filter={filter}
+          indicatorType={indicatorType}
           indicator={indicator}
           handleFilterClick={this.handleFilterClick} >
           {DropdownItems}
