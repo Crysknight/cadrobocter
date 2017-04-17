@@ -122,6 +122,11 @@ export default function (state = initState, action) {
 					break;
 				}
 				case 'direction': {
+					for (let i = 0; i < newState.length; i++) {
+						if (newState[i].type === 'direction' && i !== id && newState[i].name !== 'By alphabet' && filter.name !== 'By alphabet') {
+							newState[i].status = 0;
+						}
+					}
 					if (filter.name === 'By alphabet') {
 						newState[id].status = newState[id].status === 1 ? 2 : 1;
 						break;
@@ -154,19 +159,6 @@ export default function (state = initState, action) {
 			newState[id].status = 2;
 			return newState;
 		}
-		// case 'CHOOSE_DROPDOWN': {
-		// 	let newState = [ ...state ];
-		// 	let id = action.payload.filterId;
-		// 	let activeUnit = action.payload.unit;
-		// 	for (let i = 0; i < newState.length; i++) {
-		// 		newState[i].activeUnit = undefined;
-		// 		newState[i].active = false;
-		// 	}				
-		// 	newState[id].activeUnit = activeUnit;
-		// 	newState[id].active = true;
-		// 	newState[id].unfolded = false;
-		// 	return newState;
-		// }
 		default: {
 			return state;
 		}

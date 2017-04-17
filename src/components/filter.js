@@ -9,7 +9,7 @@ export default class Filter extends Component {
 	}
 
 	handleClick(e) {
-		if (e.target.nodeName !== 'UL' && e.target.nodeName !== 'LI') {
+		if (e.target.nodeName !== 'UL' && (e.target.nodeName !== 'LI' || ~e.target.className.indexOf('active'))) {
 			this.props.handleFilterClick(this.props.filter);
 		}
 		// this.props.handleFilterClick(this.props.filterId);

@@ -24,6 +24,7 @@ export function authSignUp() {
 /* ======================================================================================================================= */
 
 export function triggerFilter(filter) {
+  console.log('TRIGGER_FILTER');
   return {
     type: 'TRIGGER_FILTER',
     payload: {
@@ -33,6 +34,7 @@ export function triggerFilter(filter) {
 };
 
 export function chooseDropdown(filter, unit) {
+  console.log('CHOOSE_DROPDOWN');
   return {
     type: 'CHOOSE_DROPDOWN',
     payload: {

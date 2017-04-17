@@ -6,12 +6,16 @@ const initState = {
 			location: 'test-drive',
 			mechanicalGroup: 'engine',
 			photo: 'tp-1',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [
+				'wrench',
+				'screwdriver'
+			],
 			imp: 2,
 			cor: 2,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 2,
@@ -19,12 +23,15 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
 			photo: 'tp-2',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [
+				'wrench'
+			],
 			imp: 2,
 			cor: 3,
 			cod: 1,
 			safety: false,
-			display: true
+			filtered: false
 		},
 		{
 			id: 3,
@@ -32,12 +39,15 @@ const initState = {
 			location: 'exterior walkaround',
 			mechanicalGroup: 'engine',
 			photo: 'tp-3',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [
+				'screwdriver'
+			],
 			imp: 3,
 			cor: 3,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 4,
@@ -45,12 +55,17 @@ const initState = {
 			location: 'rear - lifted',
 			mechanicalGroup: 'transmission',
 			photo: 'tp-4',
-			tools: 2,
+			toolsComplexity: 2,
+			tools: [
+				'wrench',
+				'screwdriver',
+				'medium toolkit'
+			],
 			imp: 3,
 			cor: 2,
 			cod: 3,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 5,
@@ -58,12 +73,15 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'transmission',
 			photo: 'tp-5',
-			tools: 5,
+			toolsComplexity: 5,
+			tools: [
+				'medium toolkit'
+			],
 			imp: 3,
 			cor: 2,
 			cod: 1,
 			safety: false,
-			display: true
+			filtered: false
 		},
 		{
 			id: 6,
@@ -71,12 +89,17 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'pipes',
 			photo: 'tp-6',
-			tools: 7,
+			toolsComplexity: 7,
+			tools: [
+				'allen keys',
+				'wrench',
+				'screwdriver'
+			],
 			imp: 3,
 			cor: 3,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 7,
@@ -84,12 +107,16 @@ const initState = {
 			location: 'rear - lifted',
 			mechanicalGroup: 'exhaust',
 			photo: 'tp-7',
-			tools: 3,
+			toolsComplexity: 3,
+			tools: [
+				'wrench',
+				'screwdriver'
+			],
 			imp: 2,
 			cor: 2,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 8,
@@ -97,12 +124,16 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'interior',
 			photo: 'tp-8',
-			tools: 2,
+			toolsComplexity: 2,
+			tools: [
+				'wrench',
+				'screwdriver'
+			],
 			imp: 3,
 			cor: 1,
 			cod: 3,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 9,
@@ -110,12 +141,15 @@ const initState = {
 			location: 'rear - lifted',
 			mechanicalGroup: 'pipes',
 			photo: 'tp-9',
-			tools: 7,
+			toolsComplexity: 7,
+			tools: [
+				'wrench'
+			],
 			imp: 3,
 			cor: 3,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 10,
@@ -123,12 +157,15 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
 			photo: 'tp-10',
-			tools: 100,
+			toolsComplexity: 100,
+			tools: [
+				'alien toolkit'
+			],
 			imp: 2,
 			cor: 3,
 			cod: 1,
 			safety: false,
-			display: true
+			filtered: false
 		},
 		{
 			id: 11,
@@ -136,12 +173,16 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'brakes',
 			photo: 'tp-11',
-			tools: 5,
+			toolsComplexity: 5,
+			tools: [
+				'wrench',
+				'screwdriver'
+			],
 			imp: 2,
 			cor: 2,
 			cod: 2,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 12,
@@ -149,12 +190,15 @@ const initState = {
 			location: 'exterior walkaround',
 			mechanicalGroup: 'body & paint',
 			photo: 'tp-12',
-			tools: 3,
+			toolsComplexity: 3,
+			tools: [
+				'wrench'
+			],
 			imp: 1,
 			cor: 1,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 13,
@@ -162,12 +206,15 @@ const initState = {
 			location: 'rear - lifted',
 			mechanicalGroup: 'exhaust',
 			photo: 'tp-13',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [
+				'screwdriver'
+			],
 			imp: 2,
 			cor: 1,
 			cod: 1,
 			safety: false,
-			display: true
+			filtered: false
 		},
 		{
 			id: 14,
@@ -175,12 +222,13 @@ const initState = {
 			location: 'front - lifted',
 			mechanicalGroup: 'interior',
 			photo: 'tp-14',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [],
 			imp: 1,
 			cor: 1,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 15,
@@ -188,12 +236,13 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
 			photo: 'tp-15',
-			tools: 8,
+			toolsComplexity: 8,
+			tools: [],
 			imp: 2,
 			cor: 3,
 			cod: 1,
 			safety: true,
-			display: true
+			filtered: false
 		},
 		{
 			id: 16,
@@ -201,12 +250,15 @@ const initState = {
 			location: 'front - lifted',
 			mechanicalGroup: 'glass',
 			photo: 'tp-16',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [
+				'wrench'
+			],
 			imp: 1,
 			cor: 2,
 			cod: 1,
 			safety: false,
-			display: true
+			filtered: false
 		},
 		{
 			id: 17,
@@ -214,23 +266,37 @@ const initState = {
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
 			photo: 'tp-17',
-			tools: 0,
+			toolsComplexity: 0,
+			tools: [
+				'medium toolkit'
+			],
 			imp: 3,
 			cor: 3,
 			cod: 3,
 			safety: true,
-			display: true
+			filtered: false
 		}
 	],
-	alphabetSorting: 'down',
+	alphabetOrder: 'down',
 	appliedSorting: undefined,
-	appliedFilter: undefined
+	appliedSortingOrder: undefined,
+	appliedFilters: []
 }
 
 
 // Sorts tickets according to order argument, which can be either 'up' or 'down'. It takes ticket[criteria] properties and compares them to sort tickets.
 // Also, if ticket[criteria] are equal, it compares equal tickets by alphabet, taking an argument 'alphabetOrder', which can be either 'up' or 'down'.
 let sortTickets = (criteria, order, alphabetOrder) => (a, b) => {
+	if (!criteria) {
+		if (alphabetOrder === 'down') {
+			if (a.name > b.name) return 1;
+			if (a.name < b.name) return -1;
+		}
+		if (alphabetOrder === 'up') {
+			if (a.name > b.name) return -1;
+			if (a.name < b.name) return 1;
+		}
+	}
 	if (order === 'down' && alphabetOrder === 'down') {
 		if (a[criteria] > b[criteria]) return 1;
 		if (a[criteria] < b[criteria]) return -1;
@@ -266,13 +332,87 @@ let sortTickets = (criteria, order, alphabetOrder) => (a, b) => {
 	} else {
 		throw new Error('order value can be either "up" of "down"');
 	}
-}
+};
+
+let filterTickets = (filtersArray, ticketsArray) => {
+	for (let i = 0; i < ticketsArray.length; i++) {
+		ticketsArray[i].filtered = false;
+	}
+	for (let i = 0; i < filtersArray.length; i++) {
+		for (let j = 0; j < ticketsArray.length; j++) {
+			if (ticketsArray[j][filtersArray[i].name] !== filtersArray[i].value) {
+				ticketsArray[j].filtered = true;
+			}
+		}
+	}
+	return ticketsArray;
+};
 
 export default function (state = initState, action) {
 	switch (action.type) {
 		case 'CHOOSE_DROPDOWN': {
+			let filter = action.payload.filter;
+			let unit = action.payload.unit;
+			let newState = JSON.stringify(state);
+			newState = JSON.parse(newState);
+			newState.appliedFilters.push({
+				name: filter.interestedOf,
+				value: unit
+			});
+			newState.tickets = filterTickets(newState.appliedFilters, newState.tickets);
+			return newState;
+		}
+		case 'TRIGGER_FILTER': {
 			console.log(action.payload);
-			return state;
+			let filter = action.payload.filter;
+			let newState = JSON.stringify(state);
+			newState = JSON.parse(newState);
+			// Here is what happens to be an official hack - because action sends a previous state of the filter, I have to consider it in the code below: 
+			// it means that the status 0 becomes status 2, status 1 becomes status 0 etc. Same thing with alphabet. Maybe will fix it later.
+			if (filter.name === 'By alphabet') {
+				if (filter.status === 2) {
+					newState.alphabetOrder = 'down';
+					newState.tickets.sort(sortTickets(newState.appliedSorting, newState.appliedSortingOrder, newState.alphabetOrder));
+				} else if (filter.status === 1) {
+					newState.alphabetOrder = 'up';
+					newState.tickets.sort(sortTickets(newState.appliedSorting, newState.appliedSortingOrder, newState.alphabetOrder));
+				} else {
+					console.log('error in trigger_filter: by alphabet filter cannot have another status but 1 or 2');
+				}
+			} else if (filter.type === 'direction') {
+				switch (filter.status) {
+					case 2: {
+						newState.appliedSorting = undefined;
+						newState.appliedSortingOrder = undefined;
+						newState.tickets.sort(sortTickets(newState.appliedSorting, newState.appliedSortingOrder, newState.alphabetOrder));
+						break;
+					}
+					case 0: {
+						newState.appliedSorting = filter.interestedOf;
+						newState.appliedSortingOrder = 'down';
+						newState.tickets.sort(sortTickets(newState.appliedSorting, newState.appliedSortingOrder, newState.alphabetOrder));
+						break;
+					}
+					case 1: {
+						newState.appliedSorting = filter.interestedOf;
+						newState.appliedSortingOrder = 'up';
+						newState.tickets.sort(sortTickets(newState.appliedSorting, newState.appliedSortingOrder, newState.alphabetOrder));
+						break;
+					}
+					default: {
+						console.log('error in trigger_filter: direction can have values of 0, 1 or 2');
+					}
+				}
+			} else if (filter.type === 'dropdown' && filter.status === 2) {
+				for (let i = 0; i < newState.appliedFilters.length; i++) {
+					if (newState.appliedFilters[i].name === filter.interestedOf) {
+						newState.appliedFilters.splice(i, 1);
+						newState.tickets = filterTickets(newState.appliedFilters, newState.tickets);
+					}
+				}
+
+			}
+			return newState;
 		}
 		// case 'TRIGGER_FILTER': {
 		// 	let newState = [ ...state ];

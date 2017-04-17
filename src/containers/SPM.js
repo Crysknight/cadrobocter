@@ -34,23 +34,23 @@ class SPM extends Component {
   }
 
   createPreviews() {
-    let ticket = this.props.ticketPreview.tickets.filter((preview) => preview.display);
+    let ticket = this.props.ticketPreview.tickets.filter((preview) => !preview.filtered);
     return ticket.map((preview) => {
       let toolsImage;
       switch (true) {
-        case (preview.tools === 0): {
+        case (preview.toolsComplexity === 0): {
           toolsImage = 'wrench-0';
           break;
         }
-        case (preview.tools >= 1 && preview.tools < 4): {
+        case (preview.toolsComplexity >= 1 && preview.toolsComplexity < 4): {
           toolsImage = 'wrench-1';
           break;
         }
-        case (preview.tools >= 4 && preview.tools < 7): {
+        case (preview.toolsComplexity >= 4 && preview.toolsComplexity < 7): {
           toolsImage = 'wrench-4';
           break;
         }
-        case (preview.tools >= 7): {
+        case (preview.toolsComplexity >= 7): {
           toolsImage = 'wrench-7';
           break;
         }
