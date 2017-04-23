@@ -105,3 +105,8 @@
 		2px 0px 0 #000,
 		2px 2px 0 #000;
 }
+
+#__auth .auth-form input[type="submit"].error {
+    background-color: #d56;
+    box-shadow: inset -2px -2px 14px #a33, 3px 3px 27px #a33;
+}

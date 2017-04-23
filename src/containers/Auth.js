@@ -26,22 +26,43 @@ class Auth extends Component {
     if (event.target.lastChild.value === 'SIGN IN') {
       let login = event.target[0].value;
       let password = event.target[1].value;
-      this.props.checkUser({ login, password });
+      this.props.checkUser(login, password);
     }
   }
   render() {
+    let errors = this.props.errors;
+    let wrongUser;
+    let wrongPassword;
+    for (let i = 0; i < errors.length; i++) {
+      if (errors[i] === 'wrong_user') {
+        wrongUser = true;
+      } else if (errors[i] === 'wrong_password') {
+        wrongPassword = true;
+      }
+    }
+    let submitValue = this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'SIGN IN' : 'SIGN UP';
+    if (wrongUser) {
+      submitValue = 'WRONG USER';
+    } else if (wrongPassword) {
+      submitValue = 'WRONG PASS';
+    }
   	const form = (
   	  <form className="auth-form" onSubmit={this.handleForm}>
   	    {this.props.auth.map((input) => {
   	      return (<Input 
   	        key={input.key}
+            onFocus={() => this.props.deleteErrors(['wrong_user', 'wrong_password'])}
   	        describer={input.describer}
   	        inputType={input.inputType}
   	        inputPlaceholder={input.inputPlaceholder}
   	        required={true}
   	      />);
   	    })}
-  	    <input type="submit" value={this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'SIGN IN' : 'SIGN UP'} />
+  	    <input
+          type="submit"
+          disabled={wrongUser || wrongPassword}
+          className={wrongUser || wrongPassword ? 'error' : ''}
+          value={submitValue} />
   	  </form>
   	);
 	return (
@@ -65,16 +86,18 @@ class Auth extends Component {
 
 function mapStateToProps(state) {
   return {
-	auth: state.auth,
-    user: state.user
+    auth: state.auth,
+    user: state.user,
+    errors: state.errors
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-	authSignIn: actions.authSignIn,
-	authSignUp: actions.authSignUp,
-    checkUser: actions.checkUser
+    authSignIn: actions.authSignIn,
+    authSignUp: actions.authSignUp,
+    checkUser: actions.checkUser,
+    deleteErrors: actions.deleteErrors
   }, dispatch);
 }
 
