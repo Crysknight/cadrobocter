@@ -1,0 +1,1 @@
+copyfiles -u 1 ./build/* ./build/static/js/* ./build/images/* ./build/static/css/* ../cadrobocter_be/build

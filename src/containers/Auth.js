@@ -19,10 +19,8 @@ class Auth extends Component {
   // }
   handleForm(event) {
   	event.preventDefault();
-    // for (let i = 0; i < event.target.length - 1; i++) {
-    //   console.dir(event.target[i].value);
-    // }
-    // console.dir(event.target.lastChild.value);
+    console.log('hello');
+    this.props.deleteErrors(['wrong_user', 'wrong_password']);
     if (event.target.lastChild.value === 'SIGN IN') {
       let login = event.target[0].value;
       let password = event.target[1].value;
@@ -51,8 +49,8 @@ class Auth extends Component {
   	    {this.props.auth.map((input) => {
   	      return (<Input 
   	        key={input.key}
-            onFocus={() => this.props.deleteErrors(['wrong_user', 'wrong_password'])}
   	        describer={input.describer}
+            onChange={() => this.props.deleteErrors(['wrong_user', 'wrong_password'])}
   	        inputType={input.inputType}
   	        inputPlaceholder={input.inputPlaceholder}
   	        required={true}
