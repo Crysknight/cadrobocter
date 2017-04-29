@@ -5,7 +5,7 @@ const initState = {
 			name: 'Engine vibration',
 			location: 'test-drive',
 			mechanicalGroup: 'engine',
-			photo: 'tp-1',
+			photo: 'tp-1.jpg',
 			toolsComplexity: 0,
 			tools: [
 				'wrench',
@@ -22,7 +22,7 @@ const initState = {
 			name: 'Visible Leaks',
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
-			photo: 'tp-2',
+			photo: 'tp-2.jpg',
 			toolsComplexity: 0,
 			tools: [
 				'wrench'
@@ -38,7 +38,7 @@ const initState = {
 			name: 'Liquids in Exhaust',
 			location: 'exterior walkaround',
 			mechanicalGroup: 'engine',
-			photo: 'tp-3',
+			photo: 'tp-3.jpg',
 			toolsComplexity: 0,
 			tools: [
 				'screwdriver'
@@ -54,7 +54,7 @@ const initState = {
 			name: 'Broken part 1',
 			location: 'rear - lifted',
 			mechanicalGroup: 'transmission',
-			photo: 'tp-4',
+			photo: 'tp-4.jpg',
 			toolsComplexity: 2,
 			tools: [
 				'wrench',
@@ -72,7 +72,7 @@ const initState = {
 			name: 'Broken part 2',
 			location: 'engine bay',
 			mechanicalGroup: 'transmission',
-			photo: 'tp-5',
+			photo: 'tp-5.jpg',
 			toolsComplexity: 5,
 			tools: [
 				'medium toolkit'
@@ -88,7 +88,7 @@ const initState = {
 			name: 'Broken part 3',
 			location: 'engine bay',
 			mechanicalGroup: 'pipes',
-			photo: 'tp-6',
+			photo: 'tp-6.jpg',
 			toolsComplexity: 7,
 			tools: [
 				'allen keys',
@@ -106,7 +106,7 @@ const initState = {
 			name: 'Exhaust falls off',
 			location: 'rear - lifted',
 			mechanicalGroup: 'exhaust',
-			photo: 'tp-7',
+			photo: 'tp-7.jpg',
 			toolsComplexity: 3,
 			tools: [
 				'wrench',
@@ -123,7 +123,7 @@ const initState = {
 			name: 'Corporative leaks',
 			location: 'engine bay',
 			mechanicalGroup: 'interior',
-			photo: 'tp-8',
+			photo: 'tp-8.jpg',
 			toolsComplexity: 2,
 			tools: [
 				'wrench',
@@ -140,7 +140,7 @@ const initState = {
 			name: 'Cut brake fluid line',
 			location: 'rear - lifted',
 			mechanicalGroup: 'pipes',
-			photo: 'tp-9',
+			photo: 'tp-9.jpg',
 			toolsComplexity: 7,
 			tools: [
 				'wrench'
@@ -156,7 +156,7 @@ const initState = {
 			name: 'Warp engine clinking',
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
-			photo: 'tp-10',
+			photo: 'tp-10.jpg',
 			toolsComplexity: 100,
 			tools: [
 				'alien toolkit'
@@ -172,7 +172,7 @@ const initState = {
 			name: 'Broken part 4',
 			location: 'engine bay',
 			mechanicalGroup: 'brakes',
-			photo: 'tp-11',
+			photo: 'tp-11.jpg',
 			toolsComplexity: 5,
 			tools: [
 				'wrench',
@@ -189,7 +189,7 @@ const initState = {
 			name: 'Rust',
 			location: 'exterior walkaround',
 			mechanicalGroup: 'body & paint',
-			photo: 'tp-12',
+			photo: 'tp-12.jpg',
 			toolsComplexity: 3,
 			tools: [
 				'wrench'
@@ -205,7 +205,7 @@ const initState = {
 			name: 'Broken part 5',
 			location: 'rear - lifted',
 			mechanicalGroup: 'exhaust',
-			photo: 'tp-13',
+			photo: 'tp-13.jpg',
 			toolsComplexity: 0,
 			tools: [
 				'screwdriver'
@@ -221,7 +221,7 @@ const initState = {
 			name: 'Broken luck amulet',
 			location: 'front - lifted',
 			mechanicalGroup: 'interior',
-			photo: 'tp-14',
+			photo: 'tp-14.png',
 			toolsComplexity: 0,
 			tools: [],
 			imp: 1,
@@ -235,7 +235,7 @@ const initState = {
 			name: 'Broken heart',
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
-			photo: 'tp-15',
+			photo: 'tp-15.jpg',
 			toolsComplexity: 8,
 			tools: [],
 			imp: 2,
@@ -249,7 +249,7 @@ const initState = {
 			name: 'Broken part 6',
 			location: 'front - lifted',
 			mechanicalGroup: 'glass',
-			photo: 'tp-16',
+			photo: 'tp-16.jpg',
 			toolsComplexity: 0,
 			tools: [
 				'wrench'
@@ -265,7 +265,7 @@ const initState = {
 			name: 'Invisible leaks',
 			location: 'engine bay',
 			mechanicalGroup: 'engine',
-			photo: 'tp-17',
+			photo: 'tp-17.jpg',
 			toolsComplexity: 0,
 			tools: [
 				'medium toolkit'
