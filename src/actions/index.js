@@ -48,7 +48,6 @@ export function deleteErrors(errors) {
 /* ======================================================================================================================= */
 
 export function triggerFilter(filter) {
-  console.log('TRIGGER_FILTER');
   return {
     type: 'TRIGGER_FILTER',
     payload: {
@@ -58,7 +57,6 @@ export function triggerFilter(filter) {
 };
 
 export function chooseDropdown(filter, unit) {
-  console.log('CHOOSE_DROPDOWN');
   return {
     type: 'CHOOSE_DROPDOWN',
     payload: {
@@ -116,4 +114,14 @@ export const logOut = token => dispatch => {
   	cookie.remove('token');
   	browserHistory.push('/auth');
   }, 300);
+};
+
+export const getTicketPreviews = (token, safety) => dispatch => {
+  axios.post('/api/getticketpreviews', { token, safety })
+    .then(res => {
+      dispatch({ type: 'GOT_TICKETS', payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };

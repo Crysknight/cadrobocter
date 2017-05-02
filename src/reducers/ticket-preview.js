@@ -1,282 +1,5 @@
 const initState = {
-	tickets: [
-		{
-			id: 1,
-			name: 'Engine vibration',
-			location: 'test-drive',
-			mechanicalGroup: 'engine',
-			photo: 'tp-1.jpg',
-			toolsComplexity: 0,
-			tools: [
-				'wrench',
-				'screwdriver'
-			],
-			imp: 2,
-			cor: 2,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 2,
-			name: 'Visible Leaks',
-			location: 'engine bay',
-			mechanicalGroup: 'engine',
-			photo: 'tp-2.jpg',
-			toolsComplexity: 0,
-			tools: [
-				'wrench'
-			],
-			imp: 2,
-			cor: 3,
-			cod: 1,
-			safety: false,
-			filtered: false
-		},
-		{
-			id: 3,
-			name: 'Liquids in Exhaust',
-			location: 'exterior walkaround',
-			mechanicalGroup: 'engine',
-			photo: 'tp-3.jpg',
-			toolsComplexity: 0,
-			tools: [
-				'screwdriver'
-			],
-			imp: 3,
-			cor: 3,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 4,
-			name: 'Broken part 1',
-			location: 'rear - lifted',
-			mechanicalGroup: 'transmission',
-			photo: 'tp-4.jpg',
-			toolsComplexity: 2,
-			tools: [
-				'wrench',
-				'screwdriver',
-				'medium toolkit'
-			],
-			imp: 3,
-			cor: 2,
-			cod: 3,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 5,
-			name: 'Broken part 2',
-			location: 'engine bay',
-			mechanicalGroup: 'transmission',
-			photo: 'tp-5.jpg',
-			toolsComplexity: 5,
-			tools: [
-				'medium toolkit'
-			],
-			imp: 3,
-			cor: 2,
-			cod: 1,
-			safety: false,
-			filtered: false
-		},
-		{
-			id: 6,
-			name: 'Broken part 3',
-			location: 'engine bay',
-			mechanicalGroup: 'pipes',
-			photo: 'tp-6.jpg',
-			toolsComplexity: 7,
-			tools: [
-				'allen keys',
-				'wrench',
-				'screwdriver'
-			],
-			imp: 3,
-			cor: 3,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 7,
-			name: 'Exhaust falls off',
-			location: 'rear - lifted',
-			mechanicalGroup: 'exhaust',
-			photo: 'tp-7.jpg',
-			toolsComplexity: 3,
-			tools: [
-				'wrench',
-				'screwdriver'
-			],
-			imp: 2,
-			cor: 2,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 8,
-			name: 'Corporative leaks',
-			location: 'engine bay',
-			mechanicalGroup: 'interior',
-			photo: 'tp-8.jpg',
-			toolsComplexity: 2,
-			tools: [
-				'wrench',
-				'screwdriver'
-			],
-			imp: 3,
-			cor: 1,
-			cod: 3,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 9,
-			name: 'Cut brake fluid line',
-			location: 'rear - lifted',
-			mechanicalGroup: 'pipes',
-			photo: 'tp-9.jpg',
-			toolsComplexity: 7,
-			tools: [
-				'wrench'
-			],
-			imp: 3,
-			cor: 3,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 10,
-			name: 'Warp engine clinking',
-			location: 'engine bay',
-			mechanicalGroup: 'engine',
-			photo: 'tp-10.jpg',
-			toolsComplexity: 100,
-			tools: [
-				'alien toolkit'
-			],
-			imp: 2,
-			cor: 3,
-			cod: 1,
-			safety: false,
-			filtered: false
-		},
-		{
-			id: 11,
-			name: 'Broken part 4',
-			location: 'engine bay',
-			mechanicalGroup: 'brakes',
-			photo: 'tp-11.jpg',
-			toolsComplexity: 5,
-			tools: [
-				'wrench',
-				'screwdriver'
-			],
-			imp: 2,
-			cor: 2,
-			cod: 2,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 12,
-			name: 'Rust',
-			location: 'exterior walkaround',
-			mechanicalGroup: 'body & paint',
-			photo: 'tp-12.jpg',
-			toolsComplexity: 3,
-			tools: [
-				'wrench'
-			],
-			imp: 1,
-			cor: 1,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 13,
-			name: 'Broken part 5',
-			location: 'rear - lifted',
-			mechanicalGroup: 'exhaust',
-			photo: 'tp-13.jpg',
-			toolsComplexity: 0,
-			tools: [
-				'screwdriver'
-			],
-			imp: 2,
-			cor: 1,
-			cod: 1,
-			safety: false,
-			filtered: false
-		},
-		{
-			id: 14,
-			name: 'Broken luck amulet',
-			location: 'front - lifted',
-			mechanicalGroup: 'interior',
-			photo: 'tp-14.png',
-			toolsComplexity: 0,
-			tools: [],
-			imp: 1,
-			cor: 1,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 15,
-			name: 'Broken heart',
-			location: 'engine bay',
-			mechanicalGroup: 'engine',
-			photo: 'tp-15.jpg',
-			toolsComplexity: 8,
-			tools: [],
-			imp: 2,
-			cor: 3,
-			cod: 1,
-			safety: true,
-			filtered: false
-		},
-		{
-			id: 16,
-			name: 'Broken part 6',
-			location: 'front - lifted',
-			mechanicalGroup: 'glass',
-			photo: 'tp-16.jpg',
-			toolsComplexity: 0,
-			tools: [
-				'wrench'
-			],
-			imp: 1,
-			cor: 2,
-			cod: 1,
-			safety: false,
-			filtered: false
-		},
-		{
-			id: 17,
-			name: 'Invisible leaks',
-			location: 'engine bay',
-			mechanicalGroup: 'engine',
-			photo: 'tp-17.jpg',
-			toolsComplexity: 0,
-			tools: [
-				'medium toolkit'
-			],
-			imp: 3,
-			cor: 3,
-			cod: 3,
-			safety: true,
-			filtered: false
-		}
-	],
+	tickets: [],
 	alphabetOrder: 'down',
 	appliedSorting: undefined,
 	appliedSortingOrder: undefined,
@@ -350,6 +73,31 @@ let filterTickets = (filtersArray, ticketsArray) => {
 
 export default function (state = initState, action) {
 	switch (action.type) {
+		case 'GOT_TICKETS': {
+			let newState = {};
+			let tickets = action.payload.map(ticket => {
+				let newTicket = {};
+				newTicket.id = ticket.ticketId;
+				newTicket.name = ticket.name;
+				newTicket.location = ticket.location === null ? 'ticket error' : ticket.location.name.toLowerCase();
+				newTicket.mechanicalGroup = ticket.mechanicalGroup === null ? 'ticket error ' : ticket.mechanicalGroup.name.toLowerCase();
+				newTicket.photo = ticket.photoPreview === "" ? 'no-preview.jpg' : ticket.photoPreview;
+				newTicket.tools = ticket.diagTools.length === 0 ? [] : ticket.diagTools.map(tool => tool.name);
+				newTicket.imp = ticket.importance;
+				newTicket.cod = ticket.complexityOfDiagnose;
+				newTicket.cor = ticket.complexityOfRepair;
+				newTicket.safety = ticket.safety === undefined ? 'true' : ticket.safety;
+				newTicket.filtered = false;
+				return newTicket;
+			});
+			newState.tickets = tickets;
+			newState.alphabetOrder = 'down';
+			newState.appliedSorting = undefined;
+			newState.appliedSortingOrder = undefined;
+			newState.appliedFilters = [];
+			newState.tickets.sort(sortTickets(null, null, 'down'));
+			return newState;
+		}
 		case 'CHOOSE_DROPDOWN': {
 			let filter = action.payload.filter;
 			let unit = action.payload.unit;
@@ -363,7 +111,6 @@ export default function (state = initState, action) {
 			return newState;
 		}
 		case 'TRIGGER_FILTER': {
-			console.log(action.payload);
 			let filter = action.payload.filter;
 			let newState = JSON.stringify(state);
 			newState = JSON.parse(newState);

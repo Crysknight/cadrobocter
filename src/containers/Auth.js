@@ -19,8 +19,11 @@ class Auth extends Component {
   // }
   handleForm(event) {
   	event.preventDefault();
-    console.log('hello');
-    this.props.deleteErrors(['wrong_user', 'wrong_password']);
+    for (let i = 0; i < this.props.errors.length; i++) {
+      if (this.props.errors[i] === 'wrong_user' || this.props.errors[i] === 'wrong_password') {
+        this.props.deleteErrors(['wrong_user', 'wrong_password']);
+      }
+    }
     if (event.target.lastChild.value === 'SIGN IN') {
       let login = event.target[0].value;
       let password = event.target[1].value;

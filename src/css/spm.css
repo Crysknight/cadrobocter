@@ -55,7 +55,7 @@
 
 #__spm .preview-photo, #__spm .preview-info {
 	display: inline-block;
-	width: 50%;
+	width: 40%;
 	height: 100%;
 	vertical-align: top;
 	background-color: #fff;
@@ -69,7 +69,7 @@
 
 #__spm .preview-info {
 	padding-left: 7px;
-	width: 50%;
+	width: 60%;
 	font-size: 10px;
 }
 
@@ -97,7 +97,7 @@
 #__spm .preview-photo-img {
 	height: 100%;
 	position: absolute;
-	left: -20px;
+	right: 0;
 }
 
 #__spm .scale-wrapper > div {

@@ -41,12 +41,7 @@ const initState = [
 		type: 'dropdown',
 		status: 0,
 		interestedOf: 'location',
-		units: [
-			'engine bay',
-			'rear - lifted',
-			'front - lifted',
-			'test-drive'
-		],
+		units: [],
 		enabled: true
 	},
 	{
@@ -55,16 +50,7 @@ const initState = [
 		type: 'dropdown',
 		status: 0,
 		interestedOf: 'mechanicalGroup',
-		units: [
-			'engine',
-			'transmission',
-			'pipes',
-			'exhaust',
-			'interior',
-			'brakes',
-			'body & paint',
-			'glass'
-		],
+		units: [],
 		enabled: true
 	},
 	{
@@ -112,6 +98,37 @@ const initState = [
 
 export default function (state = initState, action) {
 	switch (action.type) {
+		case 'GOT_TICKETS': {
+			let newState = [ ...state ];
+			let mechGroupsCollection = [];
+			let locationsCollection = [];
+			action.payload.map(ticket => {
+				let uniqueness = true;
+				for (let i = 0; i < mechGroupsCollection.length; i++) {
+					if (mechGroupsCollection[i] === ticket.mechanicalGroup.name.toLowerCase()) {
+						uniqueness = false;
+					}
+				}
+				if (uniqueness) {
+					mechGroupsCollection.push(ticket.mechanicalGroup.name.toLowerCase());
+				}
+				return false;
+			});
+			action.payload.map(ticket => {
+				let uniqueness = true;
+				for (let i = 0; i < locationsCollection.length; i++) {
+					if (locationsCollection[i] === ticket.location.name.toLowerCase()) {
+						uniqueness = false;
+					}
+				}
+				if (uniqueness) {
+					locationsCollection.push(ticket.location.name.toLowerCase());
+				}
+			});
+			newState[1].units = locationsCollection;
+			newState[2].units = mechGroupsCollection;
+			return newState;
+		}
 		case 'TRIGGER_FILTER': {
 			let newState = [ ...state ];
 			let filter = action.payload.filter;

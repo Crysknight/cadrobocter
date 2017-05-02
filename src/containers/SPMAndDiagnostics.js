@@ -12,7 +12,7 @@ import DropdownItem from '../components/dropdown-item';
 import '../css/spm.css';
 import '../css/filter.css';
 
-class SPM extends Component {
+class SPMAndDiagnostics extends Component {
 
   constructor(props) {
 		super(props);
@@ -20,10 +20,10 @@ class SPM extends Component {
     this.handleDropdownItemClick = this.handleDropdownItemClick.bind(this);
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   console.log(this.props.filters);
-  //   console.log(newProps.filters);
-  // }
+  componentWillMount() {
+    let safety = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? true : false;
+    this.props.getTicketPreviews(this.props.user.token, safety);
+  }
 
   handleFilterClick(filter) {
     this.props.triggerFilter(filter);
@@ -174,9 +174,10 @@ class SPM extends Component {
   render() {
     let Previews = this.createPreviews();
     let Filters = this.createFilters();
+    let pageTitle = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? 'Safety & Peace-of-Mind' : 'Full Diagnostics';
 		return (
 		  <div id="__spm">
-		    <h1>Safety & Peace-of-Mind</h1>
+		    <h1>{pageTitle}</h1>
 		    <hr />
 		  	<div className="tickets">
 			    {Previews}
@@ -194,28 +195,19 @@ class SPM extends Component {
 
 function mapStateToProps(state) {
   return {
+    routing: state.routing,
 		ticketPreview: state.ticketPreview,
-    filters: state.filters
+    filters: state.filters,
+    user: state.user
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     triggerFilter: actions.triggerFilter,
-    chooseDropdown: actions.chooseDropdown
-  //   filterTickets: actions.filterTickets,
-  //   handleDropdown: actions.handleDropdown,
-  //   sortAlphabetUp: actions.sortAlphabetUp,
-		// sortAlphabetDown: actions.sortAlphabetDown,
-  //   sortToolsUp: actions.sortToolsUp,
-  //   sortToolsDown: actions.sortToolsDown,
-  //   sortCorUp: actions.sortCorUp,
-  //   sortCorDown: actions.sortCorDown,
-  //   sortCodUp: actions.sortCodUp,
-  //   sortCodDown: actions.sortCodDown,
-  //   sortImportanceUp: actions.sortImportanceUp,
-  //   sortImportanceDown: actions.sortImportanceDown,
+    chooseDropdown: actions.chooseDropdown,
+    getTicketPreviews: actions.getTicketPreviews
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(SPM);
+export default connect(mapStateToProps, matchDispatchToProps)(SPMAndDiagnostics);
