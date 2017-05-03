@@ -14,7 +14,7 @@ import { browserHistory } from 'react-router';
 export function defaultAction() {
   return {
     type: 'DEFAULT'
-  }
+  };
 };
 
 export function authSignIn() {
@@ -33,14 +33,14 @@ export function createError(error) {
   return {
     type: "CREATE_ERROR",
     payload: error
-  }
+  };
 };
 
 export function deleteErrors(errors) {
   return {
     type: "DELETE_ERRORS",
     payload: errors
-  }
+  };
 };
 
 /* ======================================================================================================================= */
@@ -53,7 +53,7 @@ export function triggerFilter(filter) {
     payload: {
       filter
     }
-  }
+  };
 };
 
 export function chooseDropdown(filter, unit) {
@@ -63,8 +63,14 @@ export function chooseDropdown(filter, unit) {
       filter,
       unit
     }
-  }
-}
+  };
+};
+
+export function resetFilters() {
+  return {
+    type: 'RESET_FILTERS'
+  };
+};
 
 /* ======================================================================================================================= */
 /* </ FILTER ACTIONS > */
@@ -90,19 +96,23 @@ export const checkUser = (login, pwd) => dispatch => {
         dispatch({ type: "CREATE_ERROR", payload: 'wrong_user' });
       }
     });
+
   // setTimeout(() => {
   //   if (
-  //     (user.login === 'crysknife' && user.password === 'hell0-it-s-me') || 
-  //     (user.login === 'Nick' && user.password === 'hell')
+  //     (login === 'crysknife' && pwd === 'hell0-it-s-me') || 
+  //     (login === 'Nick' && pwd === 'hell')
   //   ) {
   //     console.log('welcome');
-  //     dispatch({ type: 'CHECK_USER_SUCCESS', payload: { ...user, token: 'f3q9fj948399fj' } });
-  //     cookie.save('login', user.login, { maxAge: 1800 });
+  //     dispatch({ type: 'CHECK_USER_SUCCESS', payload: { login, pwd, token: 'f3q9fj948399fj' } });
+  //     cookie.save('login', login, { maxAge: 1800 });
   //     cookie.save('token', 'f3q9fj948399fj', { maxAge: 1800 });
   //     browserHistory.push('/');
   //   } else {
-  //     console.log('go away');
-  //     dispatch({ type: 'CHECK_USER_FAILURE' });
+  //       if (login !== 'crysknife' && login !== 'Nick') {
+  //         dispatch({ type: "CREATE_ERROR", payload: 'wrong_user' });
+  //       } else if ((login === 'crysknife' && pwd !== 'hell0-it-s-me') || (login === 'Nick' && pwd !== 'hell')) {
+  //         dispatch({ type: "CREATE_ERROR", payload: 'wrong_password' });
+  //       }
   //   }
   // }, 300);
 };
@@ -124,4 +134,104 @@ export const getTicketPreviews = (token, safety) => dispatch => {
     .catch(err => {
       console.log(err);
     });
+
+  // setTimeout(() => {
+  //   dispatch({ type: 'GOT_TICKETS', payload: [
+  //     {
+  //       "_id": "5907926dccaa29184c3bef67",
+  //       "ticketId": 14,
+  //       "name": "Glass Inspection",
+  //       "importance": 1,
+  //       "complexityOfDiagnose": 1,
+  //       "complexityOfRepair": 3,
+  //       "mechanicalGroup": {
+  //         "_id": "5901849dba0757cd10bda8fc",
+  //         "name": "Glass"
+  //       },
+  //       "location": {
+  //         "_id": "59018495ba0757cd10bda8ec",
+  //         "name": "Exterior Walkaround"
+  //       },
+  //       "photoPreview": "",
+  //       "diagTools": []
+  //     },
+  //     {
+  //       "_id": "59079282ccaa29184c3bef68",
+  //       "ticketId": 15,
+  //       "name": "Exterior Lights",
+  //       "importance": 1,
+  //       "complexityOfDiagnose": 1,
+  //       "complexityOfRepair": 1,
+  //       "mechanicalGroup": {
+  //         "_id": "5901849dba0757cd10bda8fd",
+  //         "name": "Lights"
+  //       },
+  //       "location": {
+  //         "_id": "59018495ba0757cd10bda8ec",
+  //         "name": "Exterior Walkaround"
+  //       },
+  //       "photoPreview": "",
+  //       "diagTools": []
+  //     },
+  //     {
+  //       "_id": "5908d9f7a5163d01144360f5",
+  //       "ticketId": 26,
+  //       "name": "Exhaust Integrity",
+  //       "importance": 2,
+  //       "complexityOfDiagnose": 1,
+  //       "complexityOfRepair": 3,
+  //       "mechanicalGroup": {
+  //         "_id": "5901849dba0757cd10bda8f6",
+  //         "name": "Exhaust"
+  //       },
+  //       "location": {
+  //         "_id": "59018495ba0757cd10bda8f1",
+  //         "name": "Rear - Lifted"
+  //       },
+  //       "photoPreview": "",
+  //       "diagTools": []
+  //     }
+  //   ]});
+  // }, 300);
+};
+
+export const getTicket = (token, id) => dispatch => {
+  axios.post('/api/getticket', { token, ticketId: id })
+    .then(res => {
+      dispatch({ type: 'GOT_TICKET', payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  // setTimeout(() => {
+  //   dispatch({ type: 'GOT_TICKET', payload: {
+  //     "_id": "59079241ccaa29184c3bef65",
+  //     "ticketId": 12,
+  //     "name": "OBDII Trouble Codes",
+  //     "safety": false,
+  //     "complexityOfDiagnose": 2,
+  //     "complexityOfRepair": 1,
+  //     "mechanicalGroup": {
+  //       "_id": "5901849dba0757cd10bda902",
+  //       "name": "Trouble Codes"
+  //     },
+  //     "location": {
+  //       "_id": "59018495ba0757cd10bda8ed",
+  //       "name": "Interior"
+  //     },
+  //     "descriptionLevelOne": "",
+  //     "threats": [],
+  //     "symptoms": [],
+  //     "causes": [],
+  //     "visualLevelOne": [],
+  //     "diagTools": [
+  //       {
+  //         "_id": "5901847fba0757cd10bda8e6",
+  //         "name": "OBD II Scanner",
+  //         "description": "OBD II scanner with a relevant adapter for cars older than 1996"
+  //       }
+  //     ]
+  //   }});
+  // }, 300);  
 };

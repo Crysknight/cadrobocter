@@ -176,6 +176,19 @@ export default function (state = initState, action) {
 			newState[id].status = 2;
 			return newState;
 		}
+		case 'RESET_FILTERS': {
+			let newState = [ ...state ];
+			for (let i = 0; i < newState.length; i++) {
+				if (newState[i].name === 'By alphabet') {
+					newState[i].status = 1;
+				} else if (newState[i].type === 'dropdown') {
+					newState[i].activeUnit = undefined;
+					newState[i].status = 0;
+				} else {
+					newState[i].status = 0;
+				}
+			}
+		}
 		default: {
 			return state;
 		}

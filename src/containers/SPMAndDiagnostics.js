@@ -25,6 +25,10 @@ class SPMAndDiagnostics extends Component {
     this.props.getTicketPreviews(this.props.user.token, safety);
   }
 
+  componentWillUnmount() {
+    this.props.resetFilters();
+  }
+
   handleFilterClick(filter) {
     this.props.triggerFilter(filter);
   }
@@ -206,7 +210,8 @@ function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     triggerFilter: actions.triggerFilter,
     chooseDropdown: actions.chooseDropdown,
-    getTicketPreviews: actions.getTicketPreviews
+    getTicketPreviews: actions.getTicketPreviews,
+    resetFilters: actions.resetFilters
   }, dispatch);
 }
 

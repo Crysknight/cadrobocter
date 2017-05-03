@@ -14,6 +14,10 @@ class LevelOne extends Component {
 		// super(props);
   // }
 
+  componentWillMount() {
+  	this.props.getTicket(this.props.user.token, this.props.params.id.replace(/id_/, ''));
+  }
+
   render() {
   	if (!this.props.ticketLevelOne) {
   	  return (
@@ -23,6 +27,11 @@ class LevelOne extends Component {
   	  	  <h3 className="spoiler">We're sorry :(</h3>
   	  	</div>
   	  );
+  	} else if (JSON.stringify(this.props.ticketLevelOne) === '{}') {
+  		// Here be loader. But later
+  		return (
+  			<div className="loading"></div>
+  		);
   	}
   	let ticket = this.props.ticketLevelOne;
 	return (
@@ -31,7 +40,7 @@ class LevelOne extends Component {
 	    <hr />
 	    <div className="info-block">
 	      <h2>Overall information</h2>
-	      <p>{ticket.shortDescription}</p>
+	      <p>{ticket.descriptionLevelOne}</p>
 	      <hr />
 	      <div className="stuff-list">
 	      	<h3>Causes:</h3>
@@ -56,8 +65,8 @@ class LevelOne extends Component {
 	    </div>
 	    <div className="visual-block">
 		  <ColorScale level={ticket.importance} label="Importance" />
-		  <ColorScale level={ticket.testDifficulty} label="Test difficulty" />
-		  <ColorScale level={ticket.repairDifficulty} label="Repair difficulty" />
+		  <ColorScale level={ticket.complexityOfDiagnose} label="Test difficulty" />
+		  <ColorScale level={ticket.complexityOfRepair} label="Repair difficulty" />
 	    </div>
 	  </div>
 	);
@@ -65,19 +74,16 @@ class LevelOne extends Component {
 
 }
 
-function mapStateToProps(state, ownProps) {
-  let ticketLevelOne = state.ticketLevelOne.find(ticket => ticket.id === +ownProps.params.id.replace(/id_/, ''));
-  if (!ticketLevelOne) {
-  	return {};
-  }
-  return {
-	ticketLevelOne: state.ticketLevelOne.find(ticket => ticket.id === +ownProps.params.id.replace(/id_/, ''))
-  };
+function mapStateToProps(state) {
+	return {
+		user: state.user,
+		ticketLevelOne: state.ticketLevelOne
+	};
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-		defaultAction: actions.defaultAction
+  	getTicket: actions.getTicket
   }, dispatch);
 }
 
