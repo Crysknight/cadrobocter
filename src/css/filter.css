@@ -64,6 +64,10 @@
 	top: 15px;
 	-webkit-background-size: 100%;
 	background-size: 100%;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	margin: 0;
 }
 
 .filter .caret.caret-down {

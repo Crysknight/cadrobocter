@@ -124,6 +124,7 @@ export default function (state = initState, action) {
 				if (uniqueness) {
 					locationsCollection.push(ticket.location.name.toLowerCase());
 				}
+				return false;
 			});
 			newState[1].units = locationsCollection;
 			newState[2].units = mechGroupsCollection;
@@ -188,6 +189,7 @@ export default function (state = initState, action) {
 					newState[i].status = 0;
 				}
 			}
+			return newState;
 		}
 		default: {
 			return state;
