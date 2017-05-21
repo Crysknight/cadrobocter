@@ -1,0 +1,47 @@
+/* Main chunks */
+@import "./base/variables";
+@import "./base/fonts";
+@import "./base/mixins";
+
+/* Containers' scss */
+@import "./containers/auth";
+@import "./containers/garage";
+@import "./containers/layout";
+@import "./containers/level-one";
+@import "./containers/spm";
+
+/* Components' scss */
+@import "./components/filter";
+@import "./components/color-scale";
+
+/* Badass styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+	height: 100%;
+  	font-family: sans-serif;
+}
+
+#root {
+	height: 100%;
+}
+
+.master-page {
+	height: 100%;
+}
+
+.spoiler {
+	background-color: #eee;
+	color: #eee;
+	text-shadow: none;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.spoiler:hover {
+	background-color: transparent;
+	color: #000;
+}

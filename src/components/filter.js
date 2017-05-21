@@ -9,6 +9,9 @@ export default class Filter extends Component {
 	}
 
 	handleClick(e) {
+		if (~e.target.parentElement.className.indexOf('disabled')) {
+			return;
+		}
 		if (e.target.nodeName !== 'UL' && (e.target.nodeName !== 'LI' || ~e.target.className.indexOf('active'))) {
 			this.props.handleFilterClick(this.props.filter);
 		}
@@ -38,14 +41,13 @@ export default class Filter extends Component {
 			filterClasses = 'enabled';
 		}
 		return (
-			<button 
-				className={`filter ${this.props.filter.type} ${filterClasses}`}
-				disabled={!this.props.filter.enabled} 
+			<div 
+				className={`filter ${this.props.filter.type} ${filterClasses}${this.props.filter.enabled ? '' : ' disabled'}${this.props.filter.name === 'By alphabet' ? ' alphabet' : ''}`}
 				onClick={this.handleClick} >
-					<h3>{this.props.filter.name}</h3>
+					<div className="filter-title">{this.props.filter.name}</div>
 					<div className={`indicator ${this.props.indicatorType} ${this.props.indicatorType}-${this.props.indicator}`} />
 					{this.props.children}
-			</button>
+			</div>
 		);
 	}
 

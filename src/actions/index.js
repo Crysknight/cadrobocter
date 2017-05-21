@@ -85,8 +85,8 @@ export const checkUser = (login, pwd) => dispatch => {
   //       id: res.data._id,
   //       token: res.data.token
   //     }});
-  //     cookie.save('login', login, { maxAge: 1800 });
-  //     cookie.save('token', res.data.token, { maxAge: 1800 });
+  //     cookie.save('login', login);
+  //     cookie.save('token', res.data.token);
   //     browserHistory.push('/');
   //   })
   //   .catch(err => {
@@ -104,8 +104,8 @@ export const checkUser = (login, pwd) => dispatch => {
     ) {
       console.log('welcome');
       dispatch({ type: 'CHECK_USER_SUCCESS', payload: { login, pwd, token: 'f3q9fj948399fj' } });
-      cookie.save('login', login, { maxAge: 1800 });
-      cookie.save('token', 'f3q9fj948399fj', { maxAge: 1800 });
+      cookie.save('login', login);
+      cookie.save('token', 'f3q9fj948399fj');
       browserHistory.push('/');
     } else {
         if (login !== 'crysknife' && login !== 'Nick') {
@@ -189,7 +189,7 @@ export const getTicketPreviews = (token, safety) => dispatch => {
           "name": "Rear - Lifted"
         },
         "photoPreview": "",
-        "diagTools": []
+        "diagTools": ["5901849dba0757cd12bda8f0"]
       },
       {
         "_id": "5908d9f7a5162d01144360f5",
@@ -248,6 +248,7 @@ export const getTicket = (token, id) => dispatch => {
       "safety": false,
       "complexityOfDiagnose": 2,
       "complexityOfRepair": 1,
+      "importance": 3,
       "mechanicalGroup": {
         "_id": "5901849dba0757cd10bda902",
         "name": "Trouble Codes"

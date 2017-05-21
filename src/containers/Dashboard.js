@@ -7,8 +7,6 @@ import * as actions from '../actions';
 
 //here be components
 
-//import '../css/dashboard.css';
-
 class Dashboard extends Component {
 
   // constructor(props) {

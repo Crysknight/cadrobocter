@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 import * as actions from '../actions';
 
 //here be components
-
-import '../css/layout.css';
 
 class App extends Component {
 
@@ -43,6 +41,11 @@ class App extends Component {
   	];
   }
 
+  // Redirect from menu as long as there's not much to show in menu
+  componentWillMount() {
+    browserHistory.push('/safety-and-peace-of-mind');
+  }
+
   // Simply pass here some links from array above to disable it in the Layout
   disableLinks(...links) {
   	for (let i = 0; i < links.length; i++) {
@@ -56,12 +59,12 @@ class App extends Component {
   	  this.disableLinks(this.links[1], this.links[2]);
   	}
   	let Links = this.links.map((l) => <Link key={l.text} to={l.to} className={l.classes} onClick={l.enabled}>{l.text}</Link>);
-	return (
-	  <div id="__layout">
-	    <h1>Main Menu</h1>
-	    {Links}
-	  </div>
-	);
+  	return (
+  	  <div id="__layout">
+  	    <h1>Main Menu</h1>
+  	    {Links}
+  	  </div>
+  	);
   }
 }
 

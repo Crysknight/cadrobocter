@@ -1,0 +1,3 @@
+@mixin respond-custom($mnw, $mxw) {
+  @media (min-width: $mnw) and (max-width: $mxw) { @content; }
+}

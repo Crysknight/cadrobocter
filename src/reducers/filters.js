@@ -55,7 +55,7 @@ const initState = [
 	},
 	{
 		id: 3,
-		name: 'Only with tools from my toolbox',
+		name: 'Only my toolbox',
 		type: 'switch',
 		status: 0,
 		interestedOf: 'tools',

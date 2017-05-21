@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
+import BurgerMenu from './BurgerMenu';
+
 import TicketPreview from '../components/ticket-preview';
 import Filter from '../components/filter';
 import DropdownItem from '../components/dropdown-item';
-
-import '../css/spm.css';
-import '../css/filter.css';
 
 class SPMAndDiagnostics extends Component {
 
@@ -18,6 +17,10 @@ class SPMAndDiagnostics extends Component {
 		super(props);
     this.handleFilterClick = this.handleFilterClick.bind(this);
     this.handleDropdownItemClick = this.handleDropdownItemClick.bind(this);
+    this.showFilters = this.showFilters.bind(this);
+    this.state = {
+      filtersActive: false
+    };
   }
 
   componentWillMount() {
@@ -29,6 +32,14 @@ class SPMAndDiagnostics extends Component {
     this.props.resetFilters();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.routing.locationBeforeTransitions.pathname !== this.props.routing.locationBeforeTransitions.pathname) {
+      let safety = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? true : false;
+      this.props.resetFilters();
+      this.props.getTicketPreviews(this.props.user.token, safety);
+    }
+  }
+
   handleFilterClick(filter) {
     this.props.triggerFilter(filter);
   }
@@ -37,31 +48,15 @@ class SPMAndDiagnostics extends Component {
     this.props.chooseDropdown(filter, itemText);
   }
 
+  showFilters(e) {
+    if (~e.target.className.indexOf('sort-button')) {
+      this.setState({ filtersActive: !this.state.filtersActive });
+    }
+  }
+
   createPreviews() {
     let ticket = this.props.ticketPreview.tickets.filter((preview) => !preview.filtered);
     return ticket.map((preview) => {
-      let toolsImage;
-      switch (true) {
-        case (preview.toolsComplexity === 0): {
-          toolsImage = 'wrench-0';
-          break;
-        }
-        case (preview.toolsComplexity >= 1 && preview.toolsComplexity < 4): {
-          toolsImage = 'wrench-1';
-          break;
-        }
-        case (preview.toolsComplexity >= 4 && preview.toolsComplexity < 7): {
-          toolsImage = 'wrench-4';
-          break;
-        }
-        case (preview.toolsComplexity >= 7): {
-          toolsImage = 'wrench-7';
-          break;
-        }
-        default: {
-          toolsImage = 'error.png';
-        }
-      }
       return (
         <TicketPreview 
           key={preview.id} 
@@ -72,7 +67,8 @@ class SPMAndDiagnostics extends Component {
           importance={preview.imp}
           testDifficulty={preview.cod}
           repairDifficulty={preview.cor} 
-          tools={toolsImage}
+          tools={preview.tools}
+          toolsRequired={preview.toolsRequired}
           photo={preview.photo} />
       );
     });
@@ -179,7 +175,7 @@ class SPMAndDiagnostics extends Component {
     let Previews = this.createPreviews();
     let Filters = this.createFilters();
     let pageTitle = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? 'Safety & Peace-of-Mind' : 'Full Diagnostics';
-		return (
+		/*return (
 		  <div id="__spm">
 		    <h1>{pageTitle}</h1>
 		    <hr />
@@ -192,7 +188,23 @@ class SPMAndDiagnostics extends Component {
           {Filters}
 			  </div>
 		  </div>
-		);
+		);*/
+    return (
+      <div id="__spm">
+        <section className="top-section">
+          <BurgerMenu />
+          <div className={`sort-button${this.state.filtersActive ? ' active' : ''}`} onClick={this.showFilters}>Sort
+            <div className="filters">{Filters}</div>
+          </div>
+          <h1>{pageTitle}</h1>
+        </section>
+        <div className="container-fluid">
+          <div className="row">
+            {Previews}
+          </div>
+        </div>
+      </div>
+    );
   }
   
 }

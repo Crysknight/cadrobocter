@@ -11,23 +11,23 @@ export default class TicketPreview extends Component {
 
   render() {
 		return (
-				<div className="ticket-preview-wrapper col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<Link to={`/ticket/id_${this.props.id}`}></Link>
-				  <div className="ticket-preview">
-				  	<div className="preview-info">
-					  	<h3>{this.props.title}</h3>
-					  	<hr />
-					  	<p className="preview-location"><b>Location:</b> {this.props.location}</p>
-					  	<p className="preview-location"><b>Mech. group:</b> {this.props.mechanicalGroup}</p>
-					  	<div className="info-block"></div>
-						  <ColorScale level={this.props.importance} label="Importance" />
-						  <ColorScale level={this.props.testDifficulty} label="Test difficulty" />
-						  <ColorScale level={this.props.repairDifficulty} label="Repair difficulty" />
+				<div className="ticket-preview-wrapper">
+					<Link to={`/ticket/id_${this.props.id}`}>
+					  <div className="ticket-preview">
+					  	<div className="preview-info">
+						  	<h3>{this.props.title}</h3>
+						  	<p className="preview-location"><b>Location:</b> {this.props.location}</p>
+						  	<p className="preview-location"><b>Mech. group:</b> {this.props.mechanicalGroup}</p>
+						  	<p className={`tools-required${this.props.toolsRequired ? ' true' : ' false'}`}><b>Tools required&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></p>
+							  <ColorScale level={this.props.importance} label="Importance" />
+							  <ColorScale level={this.props.testDifficulty} label="Test diffic." />
+							  <ColorScale level={this.props.repairDifficulty} label="Repair diffic." />
+						  </div>
+						  <div className="preview-photo">
+						  	<div className="preview-photo-img" style={{ "backgroundImage": `url("/images/${this.props.photo}")` }} />
+						  </div>
 					  </div>
-					  <div className="preview-photo">
-					  	<img className="preview-photo-img" src={`/images/${this.props.photo}`} alt="" />
-					  </div>
-				  </div>
+				  </Link>
 				</div>
 		);
   }

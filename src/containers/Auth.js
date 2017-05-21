@@ -5,8 +5,6 @@ import * as actions from '../actions';
 
 import Input from '../components/input';
 
-import '../css/auth.css';
-
 class Auth extends Component {
   constructor(props) {
   	super(props);

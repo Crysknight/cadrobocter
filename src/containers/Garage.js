@@ -7,8 +7,6 @@ import * as actions from '../actions';
 
 //here be components
 
-import '../css/garage.css';
-
 class Garage extends Component {
 
   // constructor(props) {

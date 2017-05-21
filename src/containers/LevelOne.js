@@ -6,8 +6,6 @@ import * as actions from '../actions';
 
 import ColorScale from '../components/color-scale';
 
-import '../css/level-one.css';
-
 class LevelOne extends Component {
 
   // constructor(props) {

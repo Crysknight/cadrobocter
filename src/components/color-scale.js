@@ -6,7 +6,7 @@ export default class ColorScale extends Component {
   	switch (this.props.level) {
   	  case 1: {
   	  	return (
-		  <div className="scale-wrapper">
+		  <div className="scale-wrapper easy">
 		  	<div className="scale-label">{this.props.label}</div>
 		    <div className="scale">
 		      <div className="easy" />
@@ -18,7 +18,7 @@ export default class ColorScale extends Component {
   	  }
   	  case 2: {
   	  	return (
-		  <div className="scale-wrapper">
+		  <div className="scale-wrapper medium">
 		  	<div className="scale-label">{this.props.label}</div>
 		    <div className="scale">
 		      <div className="medium" />
@@ -30,7 +30,7 @@ export default class ColorScale extends Component {
   	  }
   	  case 3: {
   	  	return (
-		  <div className="scale-wrapper">
+		  <div className="scale-wrapper hard">
 		  	<div className="scale-label">{this.props.label}</div>
 		  	<div className="scale">
 		  	  <div className="hard" />

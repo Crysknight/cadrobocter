@@ -83,6 +83,7 @@ export default function (state = initState, action) {
 				newTicket.mechanicalGroup = ticket.mechanicalGroup === null ? 'ticket error ' : ticket.mechanicalGroup.name.toLowerCase();
 				newTicket.photo = ticket.photoPreview === "" ? 'no-preview.jpg' : ticket.photoPreview;
 				newTicket.tools = ticket.diagTools.length === 0 ? [] : ticket.diagTools.map(tool => tool.name);
+				newTicket.toolsRequired = ticket.diagTools.length === 0 ? false : true;
 				newTicket.imp = ticket.importance;
 				newTicket.cod = ticket.complexityOfDiagnose;
 				newTicket.cor = ticket.complexityOfRepair;
@@ -159,6 +160,19 @@ export default function (state = initState, action) {
 				}
 
 			}
+			return newState;
+		}
+		case 'RESET_FILTERS': {
+			let newState = JSON.stringify(state);
+			newState = JSON.parse(newState);
+			for (let i = 0; i < newState.tickets.length; i++) {
+				newState.tickets[i].filtered = false;
+				newState.tickets.sort(sortTickets(null, null, 'down'));
+			}
+			newState.alphabetOrder = 'down';
+			newState.appliedSorting = undefined;
+			newState.appliedSortingOrder = undefined;
+			newState.appliedFilters = [];
 			return newState;
 		}
 		// case 'TRIGGER_FILTER': {

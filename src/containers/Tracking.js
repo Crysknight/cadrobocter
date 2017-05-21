@@ -7,8 +7,6 @@ import * as actions from '../actions';
 
 //here be components
 
-//import '../css/tracking.css';
-
 class Tracking extends Component {
 
   // constructor(props) {
