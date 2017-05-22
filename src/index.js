@@ -19,6 +19,7 @@ import LevelOne from './containers/LevelOne';
 
 import MasterPage from './components/MasterPage';
 import './css/index.css';
+import 'slick-carousel/slick/slick.css';
 
 
 import allReducers from './reducers';

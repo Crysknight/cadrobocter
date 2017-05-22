@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Slider from 'react-slick';
 
 import * as actions from '../actions';
 
@@ -32,6 +33,12 @@ class LevelOne extends Component {
   		);
   	}
   	let ticket = this.props.ticketLevelOne;
+  	let settings = {
+  		dots: true,
+  		infinite: false,
+  		slidesToShow: 1,
+  		slidesToScroll: 1
+  	}
 	return (
 	  <div id="__level_one">
 	    <h1>{ticket.name}</h1>
@@ -62,9 +69,31 @@ class LevelOne extends Component {
 		  {ticket.tags.map((tag, i) => <div className="tag" key={i}>{tag}</div>)}
 	    </div>
 	    <div className="visual-block">
-		  <ColorScale level={ticket.importance} label="Importance" />
-		  <ColorScale level={ticket.complexityOfDiagnose} label="Test difficulty" />
-		  <ColorScale level={ticket.complexityOfRepair} label="Repair difficulty" />
+			  <div className="color-scales">
+			  	<ColorScale level={ticket.importance} label="Importance" />
+			  	<ColorScale level={ticket.complexityOfDiagnose} label="Test difficulty" />
+			  	<ColorScale level={ticket.complexityOfRepair} label="Repair difficulty" />
+			  </div>
+			  <div className="level-one-slider">
+			  	<Slider {...settings}>
+			  		<div className="level-one-slide">
+			  			<img src="/images/no-preview.jpg" />
+			  			<h3>Slide 1</h3>
+			  		</div>
+			  		<div className="level-one-slide">
+			  			<img src="/images/no-preview.jpg" />
+			  			<h3>Slide 2</h3>
+			  		</div>
+			  		<div className="level-one-slide">
+			  			<img src="/images/no-preview.jpg" />
+			  			<h3>Slide 3</h3>
+			  		</div>
+			  		<div className="level-one-slide">
+			  			<img src="/images/no-preview.jpg" />
+			  			<h3>Slide 4</h3>
+			  		</div>
+			  	</Slider>
+			  </div>
 	    </div>
 	  </div>
 	);

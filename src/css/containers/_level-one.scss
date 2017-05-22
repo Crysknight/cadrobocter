@@ -146,3 +146,58 @@
 #__level_one .scale-wrapper:nth-child(n) {
 	margin-left: 0;
 }
+
+#__level_one {
+	.level-one-slider {
+		position: relative;
+	}
+	.slick-slide img {
+		margin: 0 auto;
+	}
+	.slick-slide h3 {
+		text-align: center;
+	}
+	.slick-prev, .slick-next {
+		position: absolute;
+		top: 170px;
+		z-index: 50;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: transparent;
+		width: 50px;
+		height: 50px;
+		background-size: cover;
+		&.slick-disabled {
+			opacity: 0.3;
+		}
+	}
+	.slick-prev {
+		left: 150px;
+		background-image: url("/images/caret-left.png");
+	}
+	.slick-next {
+		right: 150px;
+		background-image: url("/images/caret-right.png");
+	}
+	.slick-dots {
+		width: 300px;
+		margin: 0 auto;
+		text-align: center;
+		li {
+			display: inline-block;
+			border: 2px solid #333;
+			border-radius: 50%;
+			color: transparent;
+			margin: 8px;
+			button {
+				border: none;
+				outline: none;
+				background-color: transparent;
+			}
+		}
+		li.slick-active {
+			background-color: #333;
+		}
+	}
+}

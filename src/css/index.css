@@ -300,6 +300,54 @@ input[type="radio"]:focus {
 #__level_one .scale-wrapper:nth-child(n) {
   margin-left: 0; }
 
+#__level_one .level-one-slider {
+  position: relative; }
+
+#__level_one .slick-slide img {
+  margin: 0 auto; }
+
+#__level_one .slick-slide h3 {
+  text-align: center; }
+
+#__level_one .slick-prev, #__level_one .slick-next {
+  position: absolute;
+  top: 170px;
+  z-index: 50;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: transparent;
+  width: 50px;
+  height: 50px;
+  background-size: cover; }
+  #__level_one .slick-prev.slick-disabled, #__level_one .slick-next.slick-disabled {
+    opacity: 0.3; }
+
+#__level_one .slick-prev {
+  left: 150px;
+  background-image: url("/images/caret-left.png"); }
+
+#__level_one .slick-next {
+  right: 150px;
+  background-image: url("/images/caret-right.png"); }
+
+#__level_one .slick-dots {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center; }
+  #__level_one .slick-dots li {
+    display: inline-block;
+    border: 2px solid #333;
+    border-radius: 50%;
+    color: transparent;
+    margin: 8px; }
+    #__level_one .slick-dots li button {
+      border: none;
+      outline: none;
+      background-color: transparent; }
+  #__level_one .slick-dots li.slick-active {
+    background-color: #333; }
+
 #__spm {
   background-color: #0d1119;
   min-height: 100%; }
@@ -457,7 +505,7 @@ input[type="radio"]:focus {
         font-family: 'Furore';
         font-size: 24px;
         color: #fff;
-        height: 50px; }
+        height: 70px; }
         @media (min-width: 320px) and (max-width: 460px) {
           #__spm .ticket-preview-wrapper .preview-info h3 {
             font-size: 18px;
@@ -465,7 +513,7 @@ input[type="radio"]:focus {
       #__spm .ticket-preview-wrapper .preview-info p {
         margin-bottom: 0; }
       #__spm .ticket-preview-wrapper .preview-info .tools-required {
-        margin: 25px 0;
+        margin: 15px 0;
         display: inline-block;
         text-transform: uppercase;
         position: relative; }

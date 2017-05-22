@@ -271,4 +271,5 @@ export const getTicket = (token, id) => dispatch => {
       ]
     }});
   }, 300);  
+  
 };

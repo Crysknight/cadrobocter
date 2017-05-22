@@ -34,7 +34,7 @@ class SPMAndDiagnostics extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.routing.locationBeforeTransitions.pathname !== this.props.routing.locationBeforeTransitions.pathname) {
-      let safety = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? true : false;
+      let safety = nextProps.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? true : false;
       this.props.resetFilters();
       this.props.getTicketPreviews(this.props.user.token, safety);
     }

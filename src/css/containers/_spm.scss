@@ -193,7 +193,7 @@
 				font-family: 'Furore';
 				font-size: 24px;
 				color: #fff;
-				height: 50px;
+				height: 70px;
 				@include respond-custom(320px, 460px) {
 					font-size: 18px;
 					height: 35px;
@@ -203,7 +203,7 @@
 				margin-bottom: 0;
 			}
 			.tools-required {
-				margin: 25px 0;
+				margin: 15px 0;
 				display: inline-block;
 				text-transform: uppercase;
 				position: relative;
