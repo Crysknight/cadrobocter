@@ -6,10 +6,10 @@
 		top: -1000px;
 		right: 0;
 		transition: all 0.4s;
-		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1);
 		border: 1px solid rgba(255, 255, 255, 0.85);
 		font-family: 'CaviarDreams-Bold';
-		font-size: 28px;
+		font-size: 20px;
 		line-height: 1;
 		@include respond-custom(320px, 526px) {
 			font-size: 20px;
@@ -20,7 +20,7 @@
 			width: 100%;
 			background-color: transparentize($layoutDark, 0.15);
 			.filter-title {
-				padding: 28px 70px 28px 28px;
+				padding: 16px 70px 16px 28px;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.85);
 				text-align: left;
 				text-transform: uppercase;
@@ -42,7 +42,7 @@
 				width: 26px;
 				height: 26px;
 				right: 27px;
-				top: 30px;
+				top: 13px;
 				background-size: cover;
 				background-position: center;
 				border-right: none;
@@ -77,6 +77,12 @@
 			&.alphabet .indicator.arrow.arrow-up {
 				background-image: url('/images/arrow-up-alphabet.png');
 			}
+			&.alphabet.enabled .indicator.arrow.arrow-down {
+				background-image: url('/images/arrow-down.png');
+			}
+			&.alphabet.enabled .indicator.arrow.arrow-up {
+				background-image: url('/images/arrow-up.png');
+			}
 			&.disabled .indicator {
 				display: none;
 			}
@@ -104,8 +110,8 @@
 				height: 35px;
 			}
 			li.active {
-				padding-top: 16px;
-				height: 60px;
+				padding-top: 12px;
+				height: 46px;
 				color: $activeBlue;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.85);
 			}

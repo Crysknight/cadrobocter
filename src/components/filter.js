@@ -34,15 +34,18 @@ export default class Filter extends Component {
 		if (this.props.filter.type === 'dropdown' && this.props.filter.status === 2) {
 			filterClasses = 'enabled';
 		}
-		if (this.props.filter.type === 'direction' && this.props.filter.name !== 'By alphabet' && this.props.filter.status !== 0) {
+		if (this.props.filter.type === 'direction' && this.props.filter.status !== 0) {
 			filterClasses = 'enabled';
 		}
 		if (this.props.filter.type === 'switch' && this.props.filter.status === 1) {
 			filterClasses = 'enabled';
 		}
+		if (this.props.filter.name === 'Alphabet' && this.props.filter.visualStatus === 0) {
+			filterClasses = '';
+		}
 		return (
 			<div 
-				className={`filter ${this.props.filter.type} ${filterClasses}${this.props.filter.enabled ? '' : ' disabled'}${this.props.filter.name === 'By alphabet' ? ' alphabet' : ''}`}
+				className={`filter ${this.props.filter.type} ${filterClasses}${this.props.filter.enabled ? '' : ' disabled'}${this.props.filter.name === 'Alphabet' ? ' alphabet' : ''}`}
 				onClick={this.handleClick} >
 					<div className="filter-title">{this.props.filter.name}</div>
 					<div className={`indicator ${this.props.indicatorType} ${this.props.indicatorType}-${this.props.indicator}`} />

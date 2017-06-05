@@ -2,106 +2,6 @@
 	background-color: $layoutDark;
 	min-height: 100%;
 
-	.top-section {
-		height: 100px;
-		background-color: $topSectionGrey;
-	}
-
-	h1 {
-		display: inline-block;
-		vertical-align: top;
-		margin: 25px 0 0 30px;
-		color: #fff;
-		font-size: 44px;
-		line-height: 1;
-		font-family: 'Furore';
-		text-transform: uppercase;
-
-		@include respond-custom(320px, 980px) {
-			margin-top: 35px;
-		}
-
-		@include respond-custom(461px, 660px) {
-			font-size: 30px;
-		}
-
-		@include respond-custom(320px, 460px) {
-			font-size: 24px;
-		}
-
-	}
-
-	.burger-menu {
-		display: inline-block;
-		vertical-align: top;
-		height: 100px;
-		width: 103px;
-		padding: 33px 0 0 28px;
-		position: relative;
-		cursor: pointer;
-		background-color: $inactiveBlue;
-		box-shadow: inset -3px 0 0 darken($inactiveBlue, 25%);
-		&.active {
-			background-color: $activeBlue;
-			box-shadow: inset -3px 0 0 darken($activeBlue, 25%);
-		}
-
-		.burger-menu-dropdown {
-			position: absolute;
-			opacity: 0;
-			z-index: 10;
-			top: -300px;
-			transition: all 0.4s;
-			transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-			left: 0;
-			background-color: transparentize($layoutDark, 0.15);
-			ul {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-				border: 1px solid rgba(255, 255, 255, 0.85);
-			}
-			li {
-				box-sizing: border-box;
-				list-style-type: none;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.85);
-			}
-			a {
-				display: inline-block;
-				height: 80px;
-				width: 100%;
-				padding: 28px;
-				font-family: 'CaviarDreams-Bold';
-				font-size: 28px;
-				line-height: 1;
-				color: #eee;
-				text-transform: uppercase;
-				white-space: pre;
-				@include respond-custom(320px, 420px) {
-					font-size: 20px;
-				}
-				&.active {
-					border-left: 10px solid $activeBlue;
-					padding-left: 18px;
-					color: $activeBlue;
-				}
-			}
-		}
-		&.active .burger-menu-dropdown {
-			display: block;
-			top: 100px;
-			opacity: 1;
-		}
-
-		.burger-bar {
-			width: 44px;
-			height: 6px;
-			background-color: #fff;
-			box-shadow: inset 1px 1px 0 #aaa;
-			margin-bottom: 8px;
-		}
-	}
-
 	.sort-button {
 		display: inline-block;
 		float: right;
@@ -123,6 +23,12 @@
 		&.active {
 			background-color: $activeBlue;
 		}
+		@include respond-custom(1px, 350px) {
+			width: 180px;
+			background-position: 128px center;
+			font-size: 30px;
+			padding-top: 18px;
+		}
 	}
 
 	.row {
@@ -133,7 +39,7 @@
 	}
 
 	.ticket-preview-wrapper {
-		height: 295px;
+		height: 300px;
 		margin-top: 45px;
 		position: relative;
 		float: left;
@@ -143,7 +49,11 @@
 			display: block;
 		}
 
-		@include respond-custom(1521px, 4000px) {
+		@include respond-custom(2151px, 9999px) {
+			width: 25%;
+		}
+
+		@include respond-custom(1521px, 2150px) {
 			width: 33.3333333333333%;
 		}
 
@@ -167,11 +77,25 @@
 
 		.ticket-preview {
 			height: 300px;
-			padding: 10px 10px 10px 20px;
 			border-radius: 10px;
 			background-color: $ticketGrey;
-			@include respond-custom(320px, 420px) {
-				height: 270px;
+			@include respond-custom(661px, 9999px) {
+				background-image: none !important;
+			}
+			@include respond-custom(1px, 660px) {
+				height: 260px;
+			}
+			.ticket-preview-mobile-bg-shade {
+				margin: -1px;
+				border-radius: 10px;
+				padding: 10px 10px 10px 20px;
+				background-color: rgba(27, 30, 35, 0.90);
+				@include respond-custom(661px, 9999px) {
+					background-color: transparent;
+				}
+				@include respond-custom(1px, 661px) {
+					height: 260px;
+				}
 			}
 		}
 
@@ -180,20 +104,19 @@
 			vertical-align: top;
 			width: 50%;
 			font-family: 'CaviarDreams-Bold';
-			font-size: 18px;
+			font-size: 16px;
 			color: #fff;
 			line-height: 1;
 			padding-right: 20px;
-			@include respond-custom(320px, 500px) {
-				width: 60%;
-				font-size: 14px;
+			@include respond-custom(1px, 660px) {
+				width: 100%;
 			}
 			h3 {
 				margin-top: 10px;
 				font-family: 'Furore';
-				font-size: 24px;
+				font-size: 18px;
 				color: #fff;
-				height: 70px;
+				height: 40px;
 				@include respond-custom(320px, 460px) {
 					font-size: 18px;
 					height: 35px;
@@ -203,7 +126,7 @@
 				margin-bottom: 0;
 			}
 			.tools-required {
-				margin: 15px 0;
+				margin: 20px 0;
 				display: inline-block;
 				text-transform: uppercase;
 				position: relative;
@@ -232,8 +155,8 @@
 					display: inline-block;
 					width: 60%;
 					text-transform: uppercase;
-					@include respond-custom(320px, 500px) {
-						width: 50%;
+					@include respond-custom(1px, 660px) {
+						width: auto;
 					}
 				}
 				.scale {
@@ -243,6 +166,14 @@
 					height: 14px;
 					box-sizing: border-box;
 					background-size: cover;
+					@include respond-custom(441px, 660px) {
+						float: right;
+						margin-right: 35%;
+					}
+					@include respond-custom(1px, 440px) {
+						float: right;
+						margin-right: 0;
+					}
 				}
 				&.easy .scale {
 					background-image: url("/images/bar-easy.png");
@@ -262,8 +193,8 @@
 			float: right;
 			width: 50%;
 			max-width: 300px;
-			@include respond-custom(320px, 500px) {
-				width: 40%;
+			@include respond-custom(1px, 660px) {
+				display: none;
 			}
 			.preview-photo-img {
 				height: 280px;
@@ -278,6 +209,12 @@
 				}
 			}
 		}
+	}
+
+	.unprivileged {
+		font-size: 40px;
+		margin-top: 20px;
+		color: $errorText;
 	}
 
 }

@@ -140,11 +140,19 @@ class SPMAndDiagnostics extends Component {
           DropdownItems = (
             <ul className="dropdown-items">
               {filter.units.map((unit, index) => {
+                let itemsAmount = 0;
+                let tickets = this.props.ticketPreview.tickets;
+                for (let i = 0; i < tickets.length; i++) {
+                  if (tickets[i][filter.interestedOf] === unit) {
+                    itemsAmount++;
+                  }
+                }
                 return (
                   <DropdownItem 
                     filter={filter} 
                     handleDropdownItemClick={this.handleDropdownItemClick} 
                     key={index}
+                    itemsAmount={itemsAmount}
                     active={filter.activeUnit === unit}>
                   {unit}
                   </DropdownItem>
@@ -175,20 +183,10 @@ class SPMAndDiagnostics extends Component {
     let Previews = this.createPreviews();
     let Filters = this.createFilters();
     let pageTitle = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? 'Safety & Peace-of-Mind' : 'Full Diagnostics';
-		/*return (
-		  <div id="__spm">
-		    <h1>{pageTitle}</h1>
-		    <hr />
-		  	<div className="tickets">
-			    {Previews}
-			  </div>
-			  <div className="filters">
-          <h2>Filters</h2>
-          <button className="fold-filters"></button>
-          {Filters}
-			  </div>
-		  </div>
-		);*/
+    let access = true;
+    if (this.props.errors.indexOf('unprivileged') !== -1) {
+      access = false;
+    }
     return (
       <div id="__spm">
         <section className="top-section">
@@ -200,7 +198,7 @@ class SPMAndDiagnostics extends Component {
         </section>
         <div className="container-fluid">
           <div className="row">
-            {Previews}
+            {access ? Previews : <div className="unprivileged">Access denied</div>}
           </div>
         </div>
       </div>
@@ -212,6 +210,7 @@ class SPMAndDiagnostics extends Component {
 function mapStateToProps(state) {
   return {
     routing: state.routing,
+    errors: state.errors,
 		ticketPreview: state.ticketPreview,
     filters: state.filters,
     user: state.user

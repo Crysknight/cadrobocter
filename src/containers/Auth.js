@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import BurgerMenu from './BurgerMenu';
+
 import Input from '../components/input';
 
 class Auth extends Component {
@@ -66,16 +68,12 @@ class Auth extends Component {
   	);
 	return (
 	  <div id="__auth">
+      <section className="top-section">
+        {this.props.user.login ? <BurgerMenu /> : <div></div>}
+        <h1>Car Doctor</h1>
+      </section>
 	    <div className="wrapper">
-	      <h1>Welcome</h1>
-	      <button 
-          className={this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'change-auth focused' : 'change-auth'} 
-          onClick={this.props.authSignIn}
-        >SIGN IN</button>
-	      <button 
-          className={this.props.auth[0].key.slice(0, 7) === 'sign_up' ? 'change-auth focused' : 'change-auth'} 
-          onClick={this.props.authSignUp}
-        >SIGN UP</button>
+	      <h2>Authentication</h2>
 		  {form}
 	    </div>
 	  </div>
@@ -101,3 +99,27 @@ function matchDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(Auth);
+
+
+/*
+  return (
+    <div id="__auth">
+      <section className="top-section">
+        <BurgerMenu />
+        <h1>Car Doctor</h1>
+      </section>
+      <div className="wrapper">
+        <h2>Authentication</h2>
+        <button 
+          className={this.props.auth[0].key.slice(0, 7) === 'sign_in' ? 'change-auth focused' : 'change-auth'} 
+          onClick={this.props.authSignIn}
+        >SIGN IN</button>
+        <button 
+          className={this.props.auth[0].key.slice(0, 7) === 'sign_up' ? 'change-auth focused' : 'change-auth'} 
+          onClick={this.props.authSignUp}
+        >SIGN UP</button>
+      {form}
+      </div>
+    </div>
+  );
+*/

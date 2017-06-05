@@ -18,7 +18,7 @@ enabled: pretty obvious
 
 User scenario
 
-User enters the ticket section, which starts uploading the tickets. On the upload tickets are sorted programmaticaly by alphabet - direction down.
+User enters the ticket section, which starts uploading the tickets. On the upload tickets are sorted programmaticaly Alphabet - direction down.
 Further aphabet sorting is provided by the reducer inside method, if User choosing the alphabet sorting option. This means, alphabet sorting is always enabled.
 If User clicks on the alphabet filter, this event will change the 'alphabetSorting' property of the ticket-preview reducer and cause the tickets array to be sorted
 accordingly.
@@ -29,15 +29,16 @@ chooses an option, this dropdown filter status will change to 2, and activeUnit 
 const initState = [
 	{
 		id: 0,
-		name: 'By alphabet',
+		name: 'Alphabet',
 		type: 'direction',
 		status: 1,
+		visualStatus: 1,
 		interestedOf: 'name',
 		enabled: true
 	},
 	{
 		id: 1,
-		name: 'By location',
+		name: 'Location',
 		type: 'dropdown',
 		status: 0,
 		interestedOf: 'location',
@@ -46,7 +47,7 @@ const initState = [
 	},
 	{
 		id: 2,
-		name: 'By mechanical group',
+		name: 'Mechanical group',
 		type: 'dropdown',
 		status: 0,
 		interestedOf: 'mechanicalGroup',
@@ -55,7 +56,7 @@ const initState = [
 	},
 	{
 		id: 3,
-		name: 'Only my toolbox',
+		name: 'Use my toolbox',
 		type: 'switch',
 		status: 0,
 		interestedOf: 'tools',
@@ -63,7 +64,7 @@ const initState = [
 	},
 	{
 		id: 4,
-		name: 'By complexity of repair',
+		name: 'Complexity of repair',
 		type: 'direction',
 		status: 0,
 		interestedOf: 'cor',
@@ -71,7 +72,7 @@ const initState = [
 	},
 	{
 		id: 5,
-		name: 'By complexity of diagnose',
+		name: 'Complexity of diagnostics',
 		type: 'direction',
 		status: 0,
 		interestedOf: 'cod',
@@ -79,7 +80,7 @@ const initState = [
 	},
 	{
 		id: 6,
-		name: 'By importance',
+		name: 'Importance',
 		type: 'direction',
 		status: 0,
 		interestedOf: 'imp',
@@ -87,7 +88,7 @@ const initState = [
 	},
 	{
 		id: 7,
-		name: 'By symptom type',
+		name: 'Symptoms',
 		type: 'dropdown',
 		status: 0,
 		interestedOf: 'symptoms',
@@ -141,13 +142,19 @@ export default function (state = initState, action) {
 				}
 				case 'direction': {
 					for (let i = 0; i < newState.length; i++) {
-						if (newState[i].type === 'direction' && i !== id && newState[i].name !== 'By alphabet' && filter.name !== 'By alphabet') {
+						if (newState[i].type === 'direction' && i !== id && newState[i].name !== 'Alphabet' && filter.name !== 'Alphabet') {
 							newState[i].status = 0;
 						}
 					}
-					if (filter.name === 'By alphabet') {
+					if (filter.name === 'Alphabet') {
 						newState[id].status = newState[id].status === 1 ? 2 : 1;
 						break;
+					}
+					if (filter.name !== 'Alphabet') {
+						newState[0].visualStatus = 0;
+						if (filter.status === 2) {
+							newState[0].visualStatus = 1;
+						}
 					}
 					newState[id].status++;
 					if (newState[id].status === 3) {
@@ -156,12 +163,31 @@ export default function (state = initState, action) {
 					break;
 				}
 				case 'dropdown': {
+
+					// Disabled a possibility to choose multiple dropdowns. Uncomment this section and comment the next one to rewind it
+
+					// if (newState[id].status === 2 || newState[id].status === 1) {
+					// 	newState[id].status = 0;
+					// 	newState[id].activeUnit = undefined;
+					// } else if (newState[id].status === 0) {
+					// 	newState[id].status = 1;
+					// }
+
+					// Comment this section to rewind a possibility to choose multiple dropdowns
+
 					if (newState[id].status === 2 || newState[id].status === 1) {
 						newState[id].status = 0;
 						newState[id].activeUnit = undefined;
 					} else if (newState[id].status === 0) {
-						newState[id].status = 1;
+						for (let i = 0; i < newState.length; i++) {
+							if (newState[i].type === 'dropdown') {
+								newState[i].status = 0;
+								newState[i].activeUnit = undefined;
+							}
+							newState[id].status = 1;
+						}
 					}
+
 					break;
 				}
 				default: {
@@ -180,7 +206,7 @@ export default function (state = initState, action) {
 		case 'RESET_FILTERS': {
 			let newState = [ ...state ];
 			for (let i = 0; i < newState.length; i++) {
-				if (newState[i].name === 'By alphabet') {
+				if (newState[i].name === 'Alphabet') {
 					newState[i].status = 1;
 				} else if (newState[i].type === 'dropdown') {
 					newState[i].activeUnit = undefined;

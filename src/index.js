@@ -37,8 +37,9 @@ function requireAuth(nextState, replace) {
 function init() {
   let login = cookie.load('login');
   let token = cookie.load('token');
+  let role = cookie.load('role');
   if (login && token) {
-  	store.dispatch({ type: 'CHECK_USER_SUCCESS', payload: { login, token }});
+  	store.dispatch({ type: 'CHECK_USER_SUCCESS', payload: { login, token, role } });
   }
 }
 

@@ -33,6 +33,146 @@ html, body {
 	height: 100%;
 }
 
+/* =================================================================================================== */
+/* < TOP SECTION > */
+/* =================================================================================================== */
+
+.top-section {
+	height: 100px;
+	background-color: $topSectionGrey;
+	text-align: left;
+}
+
+h1, h2 {
+	display: inline-block;
+	vertical-align: top;
+	margin: 25px 0 0 30px;
+	color: #fff;
+	font-size: 44px;
+	line-height: 1;
+	font-family: 'Furore';
+	text-transform: uppercase;
+
+	@include respond-custom(320px, 980px) {
+		margin-top: 35px;
+		padding-right: 15px;
+		margin-left: 15px;
+	}
+
+	@include respond-custom(461px, 660px) {
+		font-size: 30px;
+	}
+
+	@include respond-custom(320px, 460px) {
+		font-size: 24px;
+	}
+
+}
+
+h2 {
+	font-size: 36px;
+
+	@include respond-custom(461px, 660px) {
+		font-size: 24px;
+	}
+
+	@include respond-custom(320px, 460px) {
+		font-size: 18px;
+	}
+
+}
+
+.burger-menu {
+	display: inline-block;
+	vertical-align: top;
+	height: 100px;
+	width: 103px;
+	padding: 33px 0 0 28px;
+	position: relative;
+	cursor: pointer;
+	background-color: $inactiveBlue;
+	box-shadow: inset -3px 0 0 darken($inactiveBlue, 25%);
+	&.active {
+		background-color: $activeBlue;
+		box-shadow: inset -3px 0 0 darken($activeBlue, 25%);
+	}
+
+	.burger-menu-dropdown {
+		position: absolute;
+		opacity: 0;
+		z-index: 10;
+		top: -400px;
+		transition: all 0.4s;
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1);
+		left: 0;
+		background-color: $layoutDark;
+		ul {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			border: 1px solid rgba(255, 255, 255, 0.85);
+		}
+		li {
+			box-sizing: border-box;
+			list-style-type: none;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+		}
+		a {
+			display: inline-block;
+			height: 80px;
+			width: 100%;
+			padding: 28px;
+			font-family: 'CaviarDreams-Bold';
+			font-size: 28px;
+			line-height: 1;
+			color: #eee;
+			text-transform: uppercase;
+			white-space: pre;
+			@include respond-custom(320px, 420px) {
+				font-size: 20px;
+			}
+			&.active {
+				border-left: 10px solid $activeBlue;
+				padding-left: 18px;
+				color: $activeBlue;
+			}
+			&.disabled {
+				cursor: default;
+				color: $inactiveGrey;
+				text-decoration: none;
+				position: relative;
+				&:after {
+					content: '';
+					display: inline-block;
+					width: 14px;
+					height: 20px;
+					position: absolute;
+					top: 29px;
+					right: 25px;
+					background-image: url("/images/locked.png");
+					background-size: cover;
+				}
+			}
+		}
+	}
+	&.active .burger-menu-dropdown {
+		display: block;
+		top: 100px;
+		opacity: 1;
+	}
+
+	.burger-bar {
+		width: 44px;
+		height: 6px;
+		background-color: #fff;
+		box-shadow: inset 1px 1px 0 #aaa;
+		margin-bottom: 8px;
+	}
+}
+
+/* =================================================================================================== */
+/* =================================================================================================== */
+
 .spoiler {
 	background-color: #eee;
 	color: #eee;

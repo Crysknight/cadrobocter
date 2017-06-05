@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   render() {
-  	if (this.props.garage.length === 0) {
+  	if (true) {
   	  this.disableLinks(this.links[1], this.links[2]);
   	}
   	let Links = this.links.map((l) => <Link key={l.text} to={l.to} className={l.classes} onClick={l.enabled}>{l.text}</Link>);

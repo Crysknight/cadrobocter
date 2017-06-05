@@ -151,15 +151,26 @@ export default function (state = initState, action) {
 						console.log('error in trigger_filter: direction can have values of 0, 1 or 2');
 					}
 				}
-			} else if (filter.type === 'dropdown' && filter.status === 2) {
-				for (let i = 0; i < newState.appliedFilters.length; i++) {
-					if (newState.appliedFilters[i].name === filter.interestedOf) {
-						newState.appliedFilters.splice(i, 1);
-						newState.tickets = filterTickets(newState.appliedFilters, newState.tickets);
-					}
-				}
 
+			// Disabled a possibility to choose multiple dropdowns. Uncomment this section and comment the next one to rewind it
+
+			// } else if (filter.type === 'dropdown' && filter.status === 2) {
+			// 	for (let i = 0; i < newState.appliedFilters.length; i++) {
+			// 		if (newState.appliedFilters[i].name === filter.interestedOf) {
+			// 			newState.appliedFilters.splice(i, 1);
+			// 			newState.tickets = filterTickets(newState.appliedFilters, newState.tickets);
+			// 		}
+			// 	}
+
+			// }		
+
+			// Comment this section to rewind a possibility to choose multiple dropdowns
+
+			} else if (filter.type === 'dropdown') {
+				newState.appliedFilters = [];
+				newState.tickets = filterTickets(newState.appliedFilters, newState.tickets);
 			}
+
 			return newState;
 		}
 		case 'RESET_FILTERS': {
@@ -175,48 +186,6 @@ export default function (state = initState, action) {
 			newState.appliedFilters = [];
 			return newState;
 		}
-		// case 'TRIGGER_FILTER': {
-		// 	let newState = [ ...state ];
-		// 	if (action.payload.filterType === 'switch') {
-		// 		newState.sort(sortTickets(action.payload.filterSortsBy, action.payload.isFilterActive ? 'down': 'up'));
-		// 	} else if (action.payload.filterType === 'dropdown') {
-		// 		for (let i = 0; i < newState.length; i++) {
-		// 			newState[i].display = true;
-		// 		}
-		// 	}
-		// 	return newState;
-		// }
-		// case 'CHOOSE_DROPDOWN': {
-		// 	console.log(action.payload);
-		// 	let newState = [ ...state ];
-		// 	for (let i = 0; i < newState.length; i++) {
-		// 		if (newState[i][action.payload.filtersBy] !== action.payload.unit) {
-		// 			newState[i].display = false;
-		// 		}
-		// 	}
-		// 	return newState;
-		// }
-		// case 'FILTER_TICKETS': {
-		// 	if (action.payload.filterId === 2) {
-		// 		return state.map((ticket) => {
-		// 			ticket.display = true;
-		// 			if (ticket.location !== action.payload.value && action.payload.currentStatus) {
-		// 				ticket.display = !ticket.display;
-		// 			}
-		// 			return ticket;
-		// 		});
-		// 	}
-		// 	if (action.payload.filterId === 3) {
-		// 		return state.map((ticket) => {
-		// 			ticket.display = true;
-		// 			if (ticket.mechanicalGroup !== action.payload.value && action.payload.currentStatus) {
-		// 				ticket.display = !ticket.display;
-		// 			}
-		// 			return ticket;
-		// 		});
-		// 	}
-		// 	return state;
-		// }
 		default: {
 			return state;
 		}

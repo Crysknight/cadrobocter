@@ -39,6 +39,14 @@ class LevelOne extends Component {
   		slidesToShow: 1,
   		slidesToScroll: 1
   	}
+  	let Slides = ticket.visual.map((v, i) => {
+  		return (
+  			<div key={i} className="level-one-slide">
+	  			<img src={`/images/${v}`} alt="no-preview" />
+	  			<h3>Slide</h3>
+	  		</div>
+  		);
+  	});
 	return (
 	  <div id="__level_one">
 	    <h1>{ticket.name}</h1>
@@ -75,24 +83,7 @@ class LevelOne extends Component {
 			  	<ColorScale level={ticket.complexityOfRepair} label="Repair difficulty" />
 			  </div>
 			  <div className="level-one-slider">
-			  	<Slider {...settings}>
-			  		<div className="level-one-slide">
-			  			<img src="/images/no-preview.jpg" />
-			  			<h3>Slide 1</h3>
-			  		</div>
-			  		<div className="level-one-slide">
-			  			<img src="/images/no-preview.jpg" />
-			  			<h3>Slide 2</h3>
-			  		</div>
-			  		<div className="level-one-slide">
-			  			<img src="/images/no-preview.jpg" />
-			  			<h3>Slide 3</h3>
-			  		</div>
-			  		<div className="level-one-slide">
-			  			<img src="/images/no-preview.jpg" />
-			  			<h3>Slide 4</h3>
-			  		</div>
-			  	</Slider>
+			  	{ticket.visual.length ? <Slider {...settings}>{Slides}</Slider> : <div></div>}
 			  </div>
 	    </div>
 	  </div>

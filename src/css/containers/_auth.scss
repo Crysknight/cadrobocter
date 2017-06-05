@@ -1,117 +1,126 @@
 #__auth {
 	/*background-color: #8fa6c6;*/
-	background: rgb(173,196,255); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(173,196,255,1) 2%, rgba(185,211,247,1) 13%, rgba(185,211,247,1) 30%, rgba(185,211,247,1) 30%, rgba(120,153,193,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(173,196,255,1) 2%,rgba(185,211,247,1) 13%,rgba(185,211,247,1) 30%,rgba(185,211,247,1) 30%,rgba(120,153,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(173,196,255,1) 2%,rgba(185,211,247,1) 13%,rgba(185,211,247,1) 30%,rgba(185,211,247,1) 30%,rgba(120,153,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc4ff', endColorstr='#7899c1',GradientType=0 ); /* IE6-9 */
+/* 	background: rgb(173,196,255);
+	background: -moz-linear-gradient(top, rgba(173,196,255,1) 2%, rgba(185,211,247,1) 13%, rgba(185,211,247,1) 30%, rgba(185,211,247,1) 30%, rgba(120,153,193,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(173,196,255,1) 2%,rgba(185,211,247,1) 13%,rgba(185,211,247,1) 30%,rgba(185,211,247,1) 30%,rgba(120,153,193,1) 100%);
+	background: linear-gradient(to bottom, rgba(173,196,255,1) 2%,rgba(185,211,247,1) 13%,rgba(185,211,247,1) 30%,rgba(185,211,247,1) 30%,rgba(120,153,193,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc4ff', endColorstr='#7899c1',GradientType=0 ); */
+	background-color: $ticketGrey;
 	height: 100%;
 	text-align: center;
 	overflow: auto;
-}
 
-#__auth .change-auth {
-	width: 110px;
-	height: 80px;
-	background-color: #ccc;
-	border: 2px solid #000;
-	font-size: 18px;
-	color: #fff;
-	text-shadow: 
-		-2px -2px 0 #000, 
-		-2px 0 0 #000, 
-		-2px 2px 0 #000, 
-		0px -2px 0 #000, 
-		0px 2px 0 #000, 
-		2px -2px 0 #000, 
-		2px 0px 0 #000, 
-		2px 2px 0 #000;
-	margin: 0 5px 20px 5px;
-	border-radius: 3px;
-	font-weight: bold;
-	padding: 1px 6px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	vertical-align: top;
-}
+	.top-section {
+		background-color: $topSectionGrey;
+	}
 
-#__auth .change-auth:focus {
-	outline: none;
-	border: 2px solid #000;
-}
+	h2 {
+		margin-top: 60px;
+	}
 
-#__auth .change-auth.focused {
-	background-color: #999;
-	-webkit-box-shadow: inset 5px 5px 3px #666;
-	box-shadow: inset 5px 5px 3px #666;
-	padding: 5px 6px 1px 10px;
-}
+	.change-auth {
+		width: 110px;
+		height: 80px;
+		background-color: #ccc;
+		border: 2px solid #000;
+		font-size: 18px;
+		color: #fff;
+		text-shadow: 
+			-2px -2px 0 #000, 
+			-2px 0 0 #000, 
+			-2px 2px 0 #000, 
+			0px -2px 0 #000, 
+			0px 2px 0 #000, 
+			2px -2px 0 #000, 
+			2px 0px 0 #000, 
+			2px 2px 0 #000;
+		margin: 0 5px 20px 5px;
+		border-radius: 3px;
+		font-weight: bold;
+		padding: 1px 6px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		vertical-align: top;
+	}
 
-#__auth .auth-form {
-	display: block;
-	margin: 0 auto;
-	width: 40%;
-	background-color: #fff;
-	border-radius: 8px;
-	-webkit-box-shadow: 4px 4px 2px #333;
-	box-shadow: 4px 4px 2px #333;
-	border: 2px solid #000;
-	position: relative;
-	height: 365px;
-}
+	.change-auth:focus {
+		outline: none;
+		border: 2px solid #000;
+	}
 
-#__auth .auth-form input {
-	display: block;
-	width: 70%;
-	margin: 0 auto;
-	margin-top: 30px;
-	height: 50px;
-	border: 2px solid #000;
-	border-radius: 3px;
-	-webkit-box-shadow: inset 2px 2px 20px #ccc;
-	box-shadow: inset 2px 2px 20px #ccc;
-	font-size: 23px;
-	color: #000;
-	padding-left: 8px;
-}
+	.change-auth.focused {
+		background-color: #999;
+		-webkit-box-shadow: inset 5px 5px 3px #666;
+		box-shadow: inset 5px 5px 3px #666;
+		padding: 5px 6px 1px 10px;
+	}
 
-#__auth .auth-form input:focus {
-	outline: 2px solid #55e;
-	outline-offset: -4px;
-	-webkit-box-shadow: inset 2px 2px 40px #cce;
-	box-shadow: inset 2px 2px 40px #cce;
-}
+	.auth-form {
+		display: block;
+		margin: 30px auto 0 auto;
+		width: 40%;
+		background-color: #fff;
+		border-radius: 8px;
+		-webkit-box-shadow: 4px 4px 2px #333;
+		box-shadow: 4px 4px 2px #333;
+		border: 2px solid #000;
+		position: relative;
+		height: 300px;
+	}
 
-#__auth .auth-form input::-webkit-input-placeholder { color: #666; }
-#__auth .auth-form input:focus::-webkit-input-placeholder { color: transparent; }
-#__auth .auth-form input::-moz-input-placeholder { color: #666; }
-#__auth .auth-form input:focus::-moz-input-placeholder { color: transparent; }
-#__auth .auth-form input:-moz-input-placeholder { color: #666; }
-#__auth .auth-form input:-moz-input-placeholder { color: transparent; }
+	.auth-form input {
+		display: block;
+		width: 70%;
+		margin: 0 auto;
+		margin-top: 30px;
+		height: 50px;
+		border: 2px solid #000;
+		border-radius: 3px;
+		-webkit-box-shadow: inset 2px 2px 20px #ccc;
+		box-shadow: inset 2px 2px 20px #ccc;
+		font-size: 23px;
+		color: #000;
+		padding-left: 8px;
+	}
 
-#__auth .auth-form input[type="submit"] {
-	margin-bottom: 30px;
-	-webkit-box-shadow: none;
-	width: 30%;
-	box-shadow: none;
-	background-color: #ccc;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #fff;
-	font-size: 23px;
-	text-shadow: 
-		-2px -2px 0 #000,
-		-2px 0 0 #000,
-		-2px 2px 0 #000,
-		0px -2px 0 #000,
-		0px 2px 0 #000,
-		2px -2px 0 #000,
-		2px 0px 0 #000,
-		2px 2px 0 #000;
-}
+	.auth-form input:focus {
+		outline: 2px solid #55e;
+		outline-offset: -4px;
+		-webkit-box-shadow: inset 2px 2px 40px #cce;
+		box-shadow: inset 2px 2px 40px #cce;
+	}
 
-#__auth .auth-form input[type="submit"].error {
-    background-color: #d56;
-    box-shadow: inset -2px -2px 14px #a33, 3px 3px 27px #a33;
+	.auth-form input::-webkit-input-placeholder { color: #666; }
+	.auth-form input:focus::-webkit-input-placeholder { color: transparent; }
+	.auth-form input::-moz-input-placeholder { color: #666; }
+	.auth-form input:focus::-moz-input-placeholder { color: transparent; }
+	.auth-form input:-moz-input-placeholder { color: #666; }
+	.auth-form input:-moz-input-placeholder { color: transparent; }
+
+	.auth-form input[type="submit"] {
+		margin-bottom: 30px;
+		-webkit-box-shadow: none;
+		width: 30%;
+		box-shadow: none;
+		background-color: #ccc;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 23px;
+		text-shadow: 
+			-2px -2px 0 #000,
+			-2px 0 0 #000,
+			-2px 2px 0 #000,
+			0px -2px 0 #000,
+			0px 2px 0 #000,
+			2px -2px 0 #000,
+			2px 0px 0 #000,
+			2px 2px 0 #000;
+	}
+
+	.auth-form input[type="submit"].error {
+	    background-color: #d56;
+	    box-shadow: inset -2px -2px 14px #a33, 3px 3px 27px #a33;
+	}
 }

@@ -13,6 +13,7 @@ class TopMenu extends Component {
 	super(props);
 	// Below is the array of links for the layout
 	this.showBurgerDropdown = this.showBurgerDropdown.bind(this);
+	this.logOut = this.logOut.bind(this);
 	this.links = [
 	  {
 	  	to: '/safety-and-peace-of-mind',
@@ -43,15 +44,22 @@ class TopMenu extends Component {
   	}
   }
 
-  showBurgerDropdown() {
-  	this.setState({ burgerActive: !this.state.burgerActive });
+  showBurgerDropdown(e) {
+  	if (e.target.className.indexOf('disabled') === -1) {
+  		this.setState({ burgerActive: !this.state.burgerActive });
+  	}
+  }
+
+  logOut() {
+  	this.props.logOut();
   }
 
   render() {
   	// Disable the links to the users with no access granted. Currently disabled!
-  	if (false) {
-  	  this.disableLinks(this.links[1], this.links[2]);
+  	if (this.props.user.role === 'user') {
+  	  this.disableLinks(this.links[1]);
   	}
+  	this.disableLinks(this.links[2]);
   	let Links = this.links.map((l) => <li key={l.text}><Link to={l.to} activeClassName="active" className={l.classes}>{l.text}</Link></li>);
 		return (
 		  <div className={`burger-menu${this.state.burgerActive ? ' active' : ''}`} onClick={this.showBurgerDropdown}>
@@ -61,6 +69,7 @@ class TopMenu extends Component {
 		  	<div className="burger-menu-dropdown">
 		  		<ul>
 		    	{Links}
+		    	<li><Link to="/auth" onClick={this.logOut} className="log-out">Log out</Link></li>
 		    	</ul>
 		    </div>
 		  </div>
