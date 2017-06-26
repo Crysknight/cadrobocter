@@ -9,5 +9,7 @@
   { "keys": ["alt+shift+s"], "command": "insert_snippet", "args": {"contents": "@include respond-to(sm) {${0:}}"}},
   { "keys": ["alt+shift+x"], "command": "insert_snippet", "args": {"contents": "@include respond-to(xs) {${0:}}"}},
   { "keys": ["alt+shift+c"], "command": "insert_snippet", "args": {"contents": "@include respond-custom(${1:}px, ${2:}px) {${0:}}"}},
-  { "keys": ["alt+shift+/"], "command": "insert_snippet", "args": {"contents": "/* =================================================================================================== */\n/* < ${0:} > */\n/* =================================================================================================== */"}}
+  { "keys": ["alt+shift+/"], "command": "insert_snippet", "args": {"contents": "/* =================================================================================================== */\n/* < ${0:} > */\n/* =================================================================================================== */"}},
+  { "keys": ["alt+shift+r"], "command": "insert_snippet", "args": {"contents": "var ${1:} = require('${2:}');\n\nmodule.exports = function(req, res) {\n\tconsole.log(req.body);\n\tres.send('ok');\n\t${0:}\n};"}},
+  { "keys": ["alt+shift+q"], "command": "insert_snippet", "args": {"contents": "var ${1:} = require('${2:}');"}}
 ]
