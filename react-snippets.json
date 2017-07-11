@@ -1,8 +1,8 @@
 [
   { "keys": ["ctrl+alt+l"], "command": "insert_snippet", "args": {"contents": "console.log($0)"}},
   { "keys": ["ctrl+alt+d"], "command": "insert_snippet", "args": {"contents": "console.dir($0)"}},
-  { "keys": ["ctrl+alt+n"], "command": "insert_snippet", "args": {"contents": "import React, { Component } from 'react';\nimport { bindActionCreators } from 'redux';\nimport { connect } from 'react-redux';\n// import { Link } from 'react-router';\n\nimport * as actions from '../actions';\n\n${3://here be components}\n\nclass ${1:CLASS} extends Component {\n\n\t// constructor(props) {\n\t\t// super(props);\n\n\t// }\n\n\trender() {\n\t\treturn (\n\t\t\t${0:}\n\t\t);\n\t}\n\n}\n\nfunction mapStateToProps(state) {\n\treturn {\n\t\t${4:}\n\t};\n}\n\nfunction matchDispatchToProps(dispatch) {\n\treturn bindActionCreators({\n\t\t${5:}\n\t}, dispatch);\n}\n\nexport default connect(mapStateToProps, matchDispatchToProps)(${1:CLASS});"}},
-  { "keys": ["ctrl+alt+t"], "command": "insert_snippet", "args": {"contents": "import React, { Component } from 'react';\n\nexport default class ${1:CLASS} extends Component {\n\n\t// constructor(props) {\n\t\t// super(props);\n\n\t// }\n\n\trender() {\n\t\treturn (\n\t\t\t${0:}\n\t\t);\n\t}\n\n}"}},
+  { "keys": ["alt+shift+n"], "command": "insert_snippet", "args": {"contents": "import React, { Component } from 'react';\nimport { bindActionCreators } from 'redux';\nimport { connect } from 'react-redux';\n// import { Link } from 'react-router';\n\nimport * as actions from '../actions';\n\n${3://here be components}\n\n//import '../css/${2:class}.css';\n\nclass ${1:CLASS} extends Component {\n\n\t// constructor(props) {\n\t\t// super(props);\n\n\t// }\n\n\trender() {\n\t\treturn (\n\t\t\t${0:}\n\t\t);\n\t}\n\n}\n\nfunction mapStateToProps(state) {\n\treturn {\n\t\t${4:}\n\t};\n}\n\nfunction matchDispatchToProps(dispatch) {\n\treturn bindActionCreators({\n\t\t${5:}\n\t}, dispatch);\n}\n\nexport default connect(mapStateToProps, matchDispatchToProps)(${1:CLASS});"}},
+  { "keys": ["alt+shift+t"], "command": "insert_snippet", "args": {"contents": "import React, { Component } from 'react';\n\nexport default class ${1:CLASS} extends Component {\n\n\t// constructor(props) {\n\t\t// super(props);\n\n\t// }\n\n\trender() {\n\t\treturn (\n\t\t\t${0:}\n\t\t);\n\t}\n\n}"}},
   { "keys": ["ctrl+alt+f"], "command": "insert_snippet", "args": {"contents": "for (let ${1:} = 0; ${1:} < ${2:}; ${1:}++) {\n\t${0:}\n}"}},
   { "keys": ["ctrl+shift+p"], "command": "insert_snippet", "args": {"contents": "this.props."}},
   { "keys": ["alt+shift+m"], "command": "insert_snippet", "args": {"contents": "@include respond-to(md) {${0:}}"}},
@@ -11,5 +11,11 @@
   { "keys": ["alt+shift+c"], "command": "insert_snippet", "args": {"contents": "@include respond-custom(${1:}px, ${2:}px) {${0:}}"}},
   { "keys": ["alt+shift+/"], "command": "insert_snippet", "args": {"contents": "/* =================================================================================================== */\n/* < ${0:} > */\n/* =================================================================================================== */"}},
   { "keys": ["alt+shift+r"], "command": "insert_snippet", "args": {"contents": "var ${1:} = require('${2:}');\n\nmodule.exports = function(req, res) {\n\tconsole.log(req.body);\n\tres.send('ok');\n\t${0:}\n};"}},
-  { "keys": ["alt+shift+q"], "command": "insert_snippet", "args": {"contents": "var ${1:} = require('${2:}');"}}
+  { "keys": ["alt+shift+q"], "command": "insert_snippet", "args": {"contents": "var ${1:} = require('${2:}');"}},
+  { "keys": ["alt+f"], "command": "move", "args": {"by": "characters", "forward": false}},
+  { "keys": ["alt+j"], "command": "move", "args": {"by": "characters", "forward": true}},
+  { "keys": ["alt+v"], "command": "move", "args": {"by": "lines", "forward": true}},
+  { "keys": ["alt+y"], "command": "move", "args": {"by": "lines", "forward": false}},
+  { "keys": ["alt+d"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+  { "keys": ["alt+k"], "command": "move_to", "args": {"to": "eol", "extend": false} }
 ]
