@@ -12,10 +12,17 @@
   { "keys": ["alt+shift+/"], "command": "insert_snippet", "args": {"contents": "/* =================================================================================================== */\n/* < ${0:} > */\n/* =================================================================================================== */"}},
   { "keys": ["alt+shift+r"], "command": "insert_snippet", "args": {"contents": "let ${1:} = require('${2:}');\n\nmodule.exports = function(req, res) {\n\tconsole.log(req.body);\n\tres.send('ok');\n\t${0:}\n};"}},
   { "keys": ["alt+shift+q"], "command": "insert_snippet", "args": {"contents": "let ${1:} = require('${2:}');"}},
+  { "keys": ["alt+shift+i"], "command": "insert_snippet", "args": {"contents": "import ${1:} from ${0:};"}},
   { "keys": ["alt+f"], "command": "move", "args": {"by": "characters", "forward": false}},
   { "keys": ["alt+j"], "command": "move", "args": {"by": "characters", "forward": true}},
   { "keys": ["alt+v"], "command": "move", "args": {"by": "lines", "forward": true}},
   { "keys": ["alt+y"], "command": "move", "args": {"by": "lines", "forward": false}},
   { "keys": ["alt+d"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-  { "keys": ["alt+k"], "command": "move_to", "args": {"to": "eol", "extend": false} }
+  { "keys": ["alt+k"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+  { "keys": ["shift+alt+f"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true}},
+  { "keys": ["shift+alt+j"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true}},
+  { "keys": ["shift+alt+v"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true}},
+  { "keys": ["shift+alt+y"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true}},
+  { "keys": ["shift+alt+d"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+  { "keys": ["shift+alt+k"], "command": "move_to", "args": {"to": "eol", "extend": true} }
 ]
