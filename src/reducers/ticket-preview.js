@@ -87,7 +87,7 @@ export default function (state = initState, action) {
 				newTicket.imp = ticket.importance;
 				newTicket.cod = ticket.complexityOfDiagnose;
 				newTicket.cor = ticket.complexityOfRepair;
-				newTicket.safety = ticket.safety === undefined ? 'true' : ticket.safety;
+				newTicket.safety = ticket.safety;
 				newTicket.filtered = false;
 				return newTicket;
 			});

@@ -12,7 +12,7 @@ export default class TicketPreview extends Component {
   render() {
 		return (
 				<div className="ticket-preview-wrapper">
-					<Link to={`/ticket/id_${this.props.id}`}>
+					<Link to={`/ticket/${this.props.safety ? '1' : '0'}/${this.props.id}`}>
 					  <div className="ticket-preview" style={{ 
 					  	"backgroundImage": `url("/images/${this.props.photo}")`, 
 					  	"backgroundRepeat": "no-repeat",

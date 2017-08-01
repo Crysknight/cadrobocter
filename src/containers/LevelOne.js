@@ -14,7 +14,7 @@ class LevelOne extends Component {
   // }
 
   componentWillMount() {
-  	this.props.getTicket(this.props.user.token, this.props.params.id.replace(/id_/, ''));
+  	this.props.getTicket(this.props.params.safety, this.props.params.id);
   }
 
   render() {

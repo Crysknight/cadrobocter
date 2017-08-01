@@ -53,7 +53,7 @@ ReactDOM.render(
       <Route path="/full-diagnostics" component={SPMAndDiagnostics} />
       {/*<Route path="/vehicle-tracking" component={Tracking} />*/}
       <Route path="/my-garage" component={Garage} />
-      <Route path="/ticket/:id" component={LevelOne} />
+      <Route path="/ticket/:safety/:id" component={LevelOne} />
       <Redirect from="/ticket" to="/ticket/id_1" />
     </Route>
   </Router>

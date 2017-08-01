@@ -14,7 +14,7 @@ import DropdownItem from '../components/dropdown-item';
 class SPMAndDiagnostics extends Component {
 
   constructor(props) {
-		super(props);
+    super(props);
     this.handleFilterClick = this.handleFilterClick.bind(this);
     this.handleDropdownItemClick = this.handleDropdownItemClick.bind(this);
     this.showFilters = this.showFilters.bind(this);
@@ -25,7 +25,7 @@ class SPMAndDiagnostics extends Component {
 
   componentWillMount() {
     let safety = this.props.routing.locationBeforeTransitions.pathname === '/safety-and-peace-of-mind' ? true : false;
-    this.props.getTicketPreviews(this.props.user.token, safety);
+    this.props.getTicketPreviews(safety);
   }
 
   componentWillUnmount() {
@@ -61,6 +61,7 @@ class SPMAndDiagnostics extends Component {
         <TicketPreview 
           key={preview.id} 
           id={preview.id}
+          safety={preview.safety}
           title={preview.name}
           location={preview.location}
           mechanicalGroup={preview.mechanicalGroup}
@@ -211,7 +212,7 @@ function mapStateToProps(state) {
   return {
     routing: state.routing,
     errors: state.errors,
-		ticketPreview: state.ticketPreview,
+    ticketPreview: state.ticketPreview,
     filters: state.filters,
     user: state.user
   };

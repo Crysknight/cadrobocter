@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 
 /* =================================================================================================== */
 /* < */
-  const development = 1;
+  const development = 0;
 /* > */
 /* =================================================================================================== */
 
@@ -16,13 +16,13 @@ export function defaultAction() {
 
 export function authSignIn() {
   return {
-  	type: 'SIGN_IN'
+    type: 'SIGN_IN'
   };
 };
 
 export function authSignUp() {
   return {
-  	type: 'SIGN_UP'
+    type: 'SIGN_UP'
   };
 };
 
@@ -88,11 +88,9 @@ export const checkUser = (login, pwd) => dispatch => {
         cookie.save('role', login === 'Vasya' ? 'user' : 'admin');
         browserHistory.push('/');
       } else {
-          if (login !== 'crysknife' && login !== 'Nick') {
-            dispatch({ type: "CREATE_ERROR", payload: 'wrong_user' });
-          } else if ((login === 'crysknife' && pwd !== 'hell0-it-s-me') || (login === 'Nick' && pwd !== 'hell')) {
-            dispatch({ type: "CREATE_ERROR", payload: 'wrong_password' });
-          }
+        if ((login !== 'crysknife' && pwd !== 'hell0-it-s-me') || (login !== 'Nick' && pwd !== 'hell')) {
+          dispatch({ type: "CREATE_ERROR", payload: 'wrong_user_or_password' });
+        }
       }
     }, 300);
   } else {
@@ -110,23 +108,22 @@ export const checkUser = (login, pwd) => dispatch => {
         browserHistory.push('/');
       })
       .catch(err => {
-        if (err.response.data === 'Wrong password') {
-          dispatch({ type: "CREATE_ERROR", payload: 'wrong_password' });
-        } else if (err.response.data === 'No such user') {
-          dispatch({ type: "CREATE_ERROR", payload: 'wrong_user' });
+        if (err.response.data === 'wrong user or password') {
+          dispatch({ type: "CREATE_ERROR", payload: 'wrong_user_or_password'})
         }
       });
   }
 };
 
 export const logOut = token => dispatch => {
-	dispatch({ type: 'USER_LOGOUT' });
-	cookie.remove('login');
-	cookie.remove('token');
+  dispatch({ type: 'USER_LOGOUT' });
+  cookie.remove('login');
+  cookie.remove('token');
   cookie.remove('role');
 };
 
-export const getTicketPreviews = (token, safety) => dispatch => {
+export const getTicketPreviews = safety => dispatch => {
+  console.log(safety);
   if (development) {
     setTimeout(() => {
       dispatch({ type: 'GOT_TICKETS', payload: [
@@ -146,7 +143,8 @@ export const getTicketPreviews = (token, safety) => dispatch => {
             "name": "Exterior Walkaround"
           },
           "photoPreview": "",
-          "diagTools": []
+          "diagTools": [],
+          "safety": true
         },
         {
           "_id": "59079282ccaa29184c3bef68",
@@ -164,7 +162,8 @@ export const getTicketPreviews = (token, safety) => dispatch => {
             "name": "Exterior Walkaround"
           },
           "photoPreview": "",
-          "diagTools": []
+          "diagTools": [],
+          "safety": false
         },
         {
           "_id": "5908d9f7a5163d01144360f5",
@@ -182,7 +181,8 @@ export const getTicketPreviews = (token, safety) => dispatch => {
             "name": "Rear - Lifted"
           },
           "photoPreview": "",
-          "diagTools": ["5901849dba0757cd12bda8f0"]
+          "diagTools": ["5901849dba0757cd12bda8f0"],
+          "safety": false
         },
         {
           "_id": "5908d9f7a5162d01144360f5",
@@ -200,7 +200,8 @@ export const getTicketPreviews = (token, safety) => dispatch => {
             "name": "Rear - Lifted"
           },
           "photoPreview": "",
-          "diagTools": []
+          "diagTools": [],
+          "safety": true
         },
         {
           "_id": "5908d9f7a5163d01044360f5",
@@ -218,12 +219,17 @@ export const getTicketPreviews = (token, safety) => dispatch => {
             "name": "Rear - Lifted"
           },
           "photoPreview": "",
-          "diagTools": []
+          "diagTools": [],
+          "safety": true
         }
       ]});
     }, 300);
   } else {
-    axios.post('/api/getticketpreviews', { token, safety })
+    axios.get('/api/get-ticket-previews/', {
+      params: {
+        safety: safety ? '1' : '0'
+      }
+    })
       .then(res => {
         dispatch({ type: 'GOT_TICKETS', payload: res.data });
       })
@@ -239,7 +245,7 @@ export const getTicketPreviews = (token, safety) => dispatch => {
   }
 };
 
-export const getTicket = (token, id) => dispatch => {
+export const getTicket = (safety, id) => dispatch => {
   if (development) {
     setTimeout(() => {
       dispatch({ type: 'GOT_TICKET', payload: {
@@ -258,10 +264,20 @@ export const getTicket = (token, id) => dispatch => {
           "_id": "59018495ba0757cd10bda8ed",
           "name": "Interior"
         },
-        "descriptionLevelOne": "",
-        "threats": [],
-        "symptoms": [],
-        "causes": [],
+        "descriptionLevelOne": `<p>Brake hoses are thin rubber pipes that press brake fluid from the brake pedal toward the wheels to engage braking. Normal wear is roughly 100,000km.</p>`,
+        "threats": [
+          `<p>It is strongly recommended to replace a cracked brake hose. 
+          Bulged brake hose must be replaced as soon as possible - puncture and loss of pressure may lead to catastrophic brake system failure.</p>`
+        ],
+        "symptoms": [
+          `<p><b>- What the symptoms and threats are.</b></p>
+          <p>There are no preliminary symptoms of brake hose failure, making regular visual inspection the best diagnostic approach. 
+          A vehicle with one or more faulty brake hoses will lose most, if not all of its braking power, which is extremely unsafe.</p>`
+        ],
+        "causes": [
+          `<p><b>- Why it happens.</b></p>
+          <p>From aging and excessive vehicle vibration brake hoses begin to develop cracks and, if left unattended, continued use of damaged hoses leads to dengerous bulging.</p>`
+        ],
         "visualLevelOne": ['wrench-0.png', 'no-preview.jpg', 'bar-medium.png'],
         "diagTools": [
           {
@@ -273,7 +289,13 @@ export const getTicket = (token, id) => dispatch => {
       }});
     }, 300); 
   } else {
-    axios.post('/api/getticket', { token, ticketId: id })
+    axios.get('/api/get-ticket', 
+      { 
+        params: {
+          safety,
+          id
+        }
+      })
       .then(res => {
         dispatch({ type: 'GOT_TICKET', payload: res.data });
       })
